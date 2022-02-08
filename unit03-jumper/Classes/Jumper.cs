@@ -5,45 +5,49 @@ namespace unit03_jumper
 {
     class Jumper
     {
-        private bool cutParachute = false;
+        private bool _cutParachute = false;
 
-        private List<string> parachuteList = new List<string>();
+        private List<string> _parachuteList = new List<string>();
 
         // add the parts of parachute into the parachute list.
         public void CreateParachutes()
         {
-            parachuteList.Add("  ___");
-            parachuteList.Add(" /___\\");
-            parachuteList.Add(" \\   /");
-            parachuteList.Add("  \\ /");
-            parachuteList.Add("   o");
-            parachuteList.Add("  /|\\");
-            parachuteList.Add("  / \\");
+            // _parachuteList.Add("  ___");
+            // _parachuteList.Add(" /___\\");
+            // _parachuteList.Add(" \\   /");
+            _parachuteList.Add("  \\ /");
+            _parachuteList.Add("   o");
+            _parachuteList.Add("  /|\\");
+            _parachuteList.Add("  / \\");
         }
         
         public void DoUpdate(bool guessRight)
         {
             if (guessRight)
             {
-                cutParachute = false;
+                _cutParachute = false;
             }
             else
             {
-                cutParachute = true;
+                _cutParachute = true;
             }
         }
 
         public void CutParachuts()
         {
-            if (cutParachute)
+            if (_cutParachute)
             {
-                parachuteList.RemoveAt(0);
+                _parachuteList.RemoveAt(0);
+            }
+            if (_parachuteList[0] == "o")
+            {
+                _parachuteList[0] = "x";
             }
         }
 
         public void GetDisplayParachuts()
         {
-            foreach(string part in parachuteList)
+            foreach(string part in _parachuteList)
             {
                 Console.WriteLine(part);
             }
