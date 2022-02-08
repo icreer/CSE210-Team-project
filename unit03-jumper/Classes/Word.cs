@@ -26,7 +26,7 @@ namespace unit03_jumper
              return _value;
         }
         
-        public void is_there_guess_right()
+       /* public void is_there_guess_right()
         {
            for (int i = 0; i < word_to_figure_out.Length;i++)
             {
@@ -36,6 +36,7 @@ namespace unit03_jumper
                 }
             } 
         }
+        */
     }
 
 }
