@@ -12,9 +12,9 @@ namespace unit03_jumper
         // add the parts of parachute into the parachute list.
         public void CreateParachutes()
         {
-            // _parachuteList.Add("  ___");
-            // _parachuteList.Add(" /___\\");
-            // _parachuteList.Add(" \\   /");
+            _parachuteList.Add("  ___");
+            _parachuteList.Add(" /___\\");
+            _parachuteList.Add(" \\   /");
             _parachuteList.Add("  \\ /");
             _parachuteList.Add("   o");
             _parachuteList.Add("  /|\\");
@@ -39,6 +39,7 @@ namespace unit03_jumper
             {
                 _parachuteList.RemoveAt(0);
             }
+            
             if (_parachuteList[0] == "o")
             {
                 _parachuteList[0] = "x";
