@@ -59,13 +59,11 @@ namespace unit03_jumper
             return dashes;
         }
 
-<<<<<<< HEAD
         /***********************************************************
         * This fuction helps with make sure that the player can keep
         * playing by checking the word_to_figure_out with there
         * guesses.
         ***********************************************************/
-=======
             public void GetDisplaydashes()
             {
                 Console.Write(this.dashes);
@@ -74,7 +72,6 @@ namespace unit03_jumper
            
     
 
->>>>>>> c7aba3a5e08ad85b9b5aa3f4875429edd999212b
         public bool can_they_keep_playing()
         {
             string dashes = "";
