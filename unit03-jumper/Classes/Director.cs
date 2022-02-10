@@ -28,22 +28,22 @@ namespace unit03_jumper
             displaystring1 = word.figure_out_word();
             while (isPlaying)
              { 
-                 terminalService._Terminal_services(displaystring1); 
+                 terminalService.get_Terminal_services(displaystring1); 
                  userguess = terminalService.GetGuess();
                  displaystring2 = word.is_there_guess_right(userguess);
                  displaystring1 = displaystring2;
                  // This if else section is to see if the player can keep playing by going to the word class and the jumper class
                  // Could be changed to work with just checking with the Jumper class
-                 if(!word.can_they_keep_playing() )
+                 if(!word.get_can_they_keep_playing() )
                  {
                      isPlaying = false;
+                     terminalService.get_Terminal_services(displaystring1);
                  }
                  else
                  {
                      isPlaying = true;
                  } 
              } 
-            terminalService._Terminal_services(displaystring1); 
          }
 
 
