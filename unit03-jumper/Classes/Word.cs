@@ -53,6 +53,13 @@ namespace unit03_jumper
             } 
             return dashes;
         }
+            public void GetDisplaydashes()
+            {
+                Console.Write(this.dashes);
+                Console.WriteLine("");
+            }
+           
+        
         
     }
 
