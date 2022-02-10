@@ -17,14 +17,14 @@ namespace unit03_jumper
         
 
 
-        public void figure_out_word()
+        public string figure_out_word()
         {
             word_to_figure_out = word_list[ranmdomwordgenirator()];
             for (int i = 0; i < word_to_figure_out.Length;i++)
             {
                 dashes += "_ ";
             }
-           
+           return dashes;
         }
         public int ranmdomwordgenirator()
         {
