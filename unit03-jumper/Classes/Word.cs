@@ -9,7 +9,11 @@ namespace unit03_jumper
         private int _value;
         private string[] word_list = {"car","pie", "jumper","git","keys","football","game","problem","roma"};
         private string dashes = "";
+
         private List<String> userguesslist = new List<String>();
+
+        
+
         public void figure_out_word()
         {
             word_to_figure_out = word_list[ranmdomwordgenirator()];
@@ -23,7 +27,7 @@ namespace unit03_jumper
         {
 
              Random newnumber = new Random();
-             _value = newnumber.Next(1,10);
+             _value = newnumber.Next(0,9);
              return _value;
         }
         
@@ -35,8 +39,8 @@ namespace unit03_jumper
             {
                 if( userguesslist.Contains(letter.ToString()) )
                 {
-                    dashes += userguesslist;
-                    Console.WriteLine(dashes);
+                    dashes += letter;
+                    //Console.WriteLine(dashes);
                 }
                 else 
                 {

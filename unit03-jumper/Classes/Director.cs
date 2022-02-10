@@ -15,21 +15,24 @@ namespace unit03_jumper
 
         }
 
+
         public void Game()
         {
+            jumper.CreateParachutes();
+            word.figure_out_word();
             while (isPlaying)
              {
-                 word.figure_out_word();
-                 jumper.CreateParachutes();
-                 word.ranmdomwordgenirator();
+                 //word.figure_out_word();
+                 //jumper.CreateParachutes();
+                 //word.ranmdomwordgenirator();
                  userguess = terminalService.GetGuess();
                  word.is_there_guess_right(userguess);
-                 isPlaying = false;
+                 //isPlaying = false;
 
                  
              }   
 
-        }
+         }
 
 
     }

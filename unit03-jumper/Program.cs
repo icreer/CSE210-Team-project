@@ -7,10 +7,11 @@ namespace unit03_jumper
         static void Main(string[] args)
         {
             bool guessRight = false;
-            Jumper j = new Jumper();
+            Classes.Jumper j = new Classes.Jumper();
+            j.CreateParachutes();
             j.DoUpdate(guessRight);
-            j.CutParachuts();
             j.GetDisplayParachuts();
+            
         }
     }
 }
