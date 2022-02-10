@@ -35,6 +35,21 @@ namespace unit03_jumper.Classes
 
         public void CutParachuts()
         {
+            //for (int i = 0; i < _parachuteList.length; i++)
+            //{
+            //    if (_cutParachute)
+                 //{
+            //   _parachuteList.RemoveAt(0);
+                //}
+            //    if (_parachuteList[0] == "o")
+            //   {
+            //    _parachuteList[0] = "x";
+            //   }
+            //  else
+            //  {
+            //        _cutParachute = false;
+            //   }
+            //}
             if (_cutParachute)
             {
                 _parachuteList.RemoveAt(0);

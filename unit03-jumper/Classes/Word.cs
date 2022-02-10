@@ -8,6 +8,7 @@ namespace unit03_jumper.Classes
         private int _value;
         private string[] word_list = {"car","pie", "jumper","git","keys","football","game","problem","roma"};
         private string dashes = "";
+        
         public void figure_out_word()
         {
             word_to_figure_out = word_list[ranmdomwordgenirator()];
