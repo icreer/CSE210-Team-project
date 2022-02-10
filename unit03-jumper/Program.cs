@@ -6,11 +6,14 @@ namespace unit03_jumper
     {
         static void Main(string[] args)
         {
-            bool guessRight = false;
-            Classes.Jumper j = new Classes.Jumper();
+          /*  bool guessRight = false;
+            Jumper j = new Jumper();
             j.CreateParachutes();
             j.DoUpdate(guessRight);
             j.GetDisplayParachuts();
+            */
+            Director D = new Director();
+            D.Game();
             
         }
     }
