@@ -7,7 +7,8 @@ namespace unit03_jumper
         private string userguess = " ";
         public void get_Terminal_services(string displaystring1 )
         {
-           Console.WriteLine(displaystring1); 
+           Console.WriteLine(displaystring1);
+           Console.WriteLine(" "); 
         }
        
         public string GetGuess()

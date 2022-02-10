@@ -6,6 +6,7 @@ namespace unit03_jumper
     class Jumper
     {
         private bool cutParachute = false;
+        private bool canplay = true;
 
         private List<string> parachuteList = new List<string>();
 
@@ -22,9 +23,11 @@ namespace unit03_jumper
             
         }
         
-        public void DoUpdate(bool guessRight)
+        public bool DoUpdate(bool guessRight)
         {
-            if (guessRight)
+            
+            
+             if (guessRight)
             {
                 cutParachute = false;
             }
@@ -32,27 +35,28 @@ namespace unit03_jumper
             {
                 cutParachute = true;
             }
+                
+                
+            
+             canplay= CutParachuts();
 
-            CutParachuts();
-
-            if (parachuteList[0] == "   o")
-            {
-                parachuteList[0] = "   x";
-            }
+             return canplay;
         }
 
-        private void CutParachuts()
+        private bool CutParachuts()
         {
             if(cutParachute)
             {
                 parachuteList.RemoveAt(0);
+                canplay = true;
             }
             
             if (parachuteList[0] == "   o")
             {
                 parachuteList[0] = "   x";
+                canplay = false;
             }
-            
+            return canplay;
         }
 
         public void GetDisplayParachuts()
@@ -61,8 +65,8 @@ namespace unit03_jumper
             {
                 Console.WriteLine(part);
             }
-
-            Console.WriteLine("");
+            Console.WriteLine(" ");
+            Console.WriteLine("^^^^^^^^^^^");
         }
 
     }
