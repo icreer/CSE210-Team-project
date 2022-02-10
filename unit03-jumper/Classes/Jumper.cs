@@ -19,6 +19,7 @@ namespace unit03_jumper
             parachuteList.Add("   o");
             parachuteList.Add("  /|\\");
             parachuteList.Add("  / \\");
+            
         }
         
         public void DoUpdate(bool guessRight)
@@ -42,7 +43,11 @@ namespace unit03_jumper
 
         private void CutParachuts()
         {
-            if (cutParachute)
+
+
+            //if (cutParachute)
+
+
             //for (int i = 0; i < _parachuteList.length; i++)
             //{
             //    
@@ -55,10 +60,12 @@ namespace unit03_jumper
             //   }
             //  else
             //  {
-            //        _cutParachute = false;
+            //        cutParachute = false;
             //   }
             //    break;
             //}
+
+           /* if(cutParachute)
            // if (_cutParachute)
 
             {
@@ -69,6 +76,7 @@ namespace unit03_jumper
             {
                 parachuteList[0] = "   x";
             }
+            */
         }
 
         public void GetDisplayParachuts()

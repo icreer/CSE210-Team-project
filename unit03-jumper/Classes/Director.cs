@@ -7,6 +7,7 @@ namespace unit03_jumper
         private Jumper jumper = new Jumper();
         private bool isPlaying = true;
         private Word word = new Word();
+        private string userguess;
         private Terminal_services terminalService = new Terminal_services();
 
         public Director()
@@ -14,20 +15,24 @@ namespace unit03_jumper
 
         }
 
-        // public void Game()
-        // {
-        //     while (isPlaying)
-        //      {
-        //          word.figure_out_word();
-        //          jumper.CreateParachutes();
-        //          word.ranmdomwordgenirator();
-        //          terminalService.GetGuess();
-        //          word.is_there_guess_right();
+
+        public void Game()
+        {
+            jumper.CreateParachutes();
+            word.figure_out_word();
+            while (isPlaying)
+             {
+                 //word.figure_out_word();
+                 //jumper.CreateParachutes();
+                 //word.ranmdomwordgenirator();
+                 userguess = terminalService.GetGuess();
+                 word.is_there_guess_right(userguess);
+                 //isPlaying = false;
 
                  
-        //      }   
+             }   
 
-        // }
+         }
 
 
     }
