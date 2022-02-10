@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-namespace unit03_jumper.Classes
+namespace unit03_jumper
 {
     class Terminal_services
     {

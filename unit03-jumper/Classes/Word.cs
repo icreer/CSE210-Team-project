@@ -16,8 +16,8 @@ namespace unit03_jumper.Classes
             {
                 dashes += "_ ";
             }
-            Console.WriteLine(dashes);
-            Console.WriteLine(word_to_figure_out);
+           // Console.WriteLine(dashes);
+           // Console.WriteLine(word_to_figure_out);
         }
         public int ranmdomwordgenirator()
         {
@@ -27,7 +27,7 @@ namespace unit03_jumper.Classes
              return _value;
         }
         
-       /* public void is_there_guess_right()
+        public void is_there_guess_right()
         {
            for (int i = 0; i < word_to_figure_out.Length;i++)
             {
@@ -37,7 +37,7 @@ namespace unit03_jumper.Classes
                 }
             } 
         }
-        */
+        
     }
 
 }

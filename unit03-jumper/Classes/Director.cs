@@ -1,6 +1,6 @@
 using System;
 
-namespace unit03_jumper.Classes
+namespace unit03_jumper
 {
     class Director
     {
