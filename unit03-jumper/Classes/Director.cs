@@ -9,6 +9,8 @@ namespace unit03_jumper
         private Word word = new Word();
         private string userguess;
         private Terminal_services terminalService = new Terminal_services();
+        private string displaystring1;
+        private string displaystring2;
 
         public Director()
         {
@@ -19,17 +21,15 @@ namespace unit03_jumper
         public void Game()
         {
             jumper.CreateParachutes();
-            word.figure_out_word();
+            displaystring1 = word.figure_out_word();
             while (isPlaying)
-             {
-                 //word.figure_out_word();
-                 //jumper.CreateParachutes();
-                 //word.ranmdomwordgenirator();
+             { 
+                 terminalService._Terminal_services(displaystring1); 
                  userguess = terminalService.GetGuess();
-                 word.is_there_guess_right(userguess);
-                 //isPlaying = false;
-
-                 
+                 displaystring2 = word.is_there_guess_right(userguess);
+                 terminalService.do_they_keep_playing(displaystring1, displaystring2);
+                 displaystring1 = displaystring2;
+                 isPlaying = word.can_they_keep_playing(); 
              }   
 
          }

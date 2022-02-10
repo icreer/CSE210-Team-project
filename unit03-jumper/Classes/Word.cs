@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace unit03_jumper
 {
@@ -9,6 +10,9 @@ namespace unit03_jumper
         private int _value;
         private string[] word_list = {"car","pie", "jumper","git","keys","football","game","problem","roma"};
         private string dashes = "";
+
+        private string userword;
+        private bool playon;
 
 
 
@@ -43,7 +47,6 @@ namespace unit03_jumper
                 if( userguesslist.Contains(letter.ToString()) )
                 {
                     dashes += letter;
-                    //Console.WriteLine(dashes);
                 }
                 else 
                 {
@@ -52,6 +55,31 @@ namespace unit03_jumper
                 dashes += " ";
             } 
             return dashes;
+        }
+
+        public bool can_they_keep_playing()
+        {
+            string dashes = "";
+             foreach (char letter in word_to_figure_out)
+            {
+                if( userguesslist.Contains(letter.ToString()) )
+                {
+                    dashes += letter;
+                }
+                else 
+                {
+                    dashes += "_";
+                }
+            }
+            if ( dashes == word_to_figure_out)
+            {
+                playon = false;
+            } 
+            else
+            {
+                playon = true;
+            }
+            return playon;
         }
         
     }
