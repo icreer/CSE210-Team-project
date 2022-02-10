@@ -57,6 +57,7 @@ namespace unit03_jumper
             //  {
             //        _cutParachute = false;
             //   }
+            //    break;
             //}
            // if (_cutParachute)
 
