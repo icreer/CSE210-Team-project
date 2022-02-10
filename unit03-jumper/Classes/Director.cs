@@ -24,6 +24,19 @@ namespace unit03_jumper
         *************************************************************************************/
         public void Game()
         {
+            word.figure_out_word();
+           
+            jumper.CreateParachutes();
+           
+            while (isPlaying)
+            {
+                 word.GetDisplaydashes();
+                 jumper.GetDisplayParachuts();
+                 
+                 userguess = terminalService.GetGuess();
+
+                 word.is_there_guess_right(userguess);
+            }   
             jumper.CreateParachutes();
             displaystring1 = word.figure_out_word();
             while (isPlaying)
