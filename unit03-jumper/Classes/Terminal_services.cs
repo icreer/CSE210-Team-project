@@ -9,17 +9,7 @@ namespace unit03_jumper
         {
            Console.WriteLine(displaystring1); 
         }
-        public void do_they_keep_playing(string displaystring1, string displaystring2)
-        {
-            if(displaystring1 == displaystring2)
-            {
-                
-            }
-            else
-            {
-
-            }
-        }
+       
         public string GetGuess()
         {
             Console.Write("Guess a letter [a-z]: ");
