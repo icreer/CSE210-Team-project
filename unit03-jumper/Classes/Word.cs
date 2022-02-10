@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 
-namespace unit03_jumper.Classes
+namespace unit03_jumper
 {
     class Word
     {
@@ -8,6 +9,7 @@ namespace unit03_jumper.Classes
         private int _value;
         private string[] word_list = {"car","pie", "jumper","git","keys","football","game","problem","roma"};
         private string dashes = "";
+        private List<String> userguesslist = new List<String>();
         public void figure_out_word()
         {
             word_to_figure_out = word_list[ranmdomwordgenirator()];
@@ -15,8 +17,7 @@ namespace unit03_jumper.Classes
             {
                 dashes += "_ ";
             }
-           // Console.WriteLine(dashes);
-           // Console.WriteLine(word_to_figure_out);
+           
         }
         public int ranmdomwordgenirator()
         {
@@ -26,15 +27,24 @@ namespace unit03_jumper.Classes
              return _value;
         }
         
-        public void is_there_guess_right()
+        public string is_there_guess_right(string userguess)
         {
-           for (int i = 0; i < word_to_figure_out.Length;i++)
+            string dashes = "";
+            userguesslist.Add(userguess);
+            foreach (char letter in word_to_figure_out)
             {
-                if(userguess == word_to_figure_out[i] )
+                if( userguesslist.Contains(letter.ToString()) )
                 {
-                    dashes[i] = userguess;
+                    dashes += userguesslist;
+                    Console.WriteLine(dashes);
                 }
+                else 
+                {
+                    dashes += "_";
+                }
+                dashes += " ";
             } 
+            return dashes;
         }
         
     }
