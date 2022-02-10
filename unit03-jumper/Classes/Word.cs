@@ -1,6 +1,6 @@
 using System;
 
-namespace unit03_jumper
+namespace unit03_jumper.Classes
 {
     class Word
     {
