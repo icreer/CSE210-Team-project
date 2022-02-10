@@ -14,20 +14,20 @@ namespace unit03_jumper.Classes
 
         }
 
-        public void Game()
-        {
-            while (isPlaying)
-             {
-                 word.figure_out_word();
-                 jumper.CreateParachutes();
-                 word.ranmdomwordgenirator();
-                 terminalService.GetGuess();
-                 word.is_there_guess_right();
+        // public void Game()
+        // {
+        //     while (isPlaying)
+        //      {
+        //          word.figure_out_word();
+        //          jumper.CreateParachutes();
+        //          word.ranmdomwordgenirator();
+        //          terminalService.GetGuess();
+        //          word.is_there_guess_right();
 
                  
-             }   
+        //      }   
 
-        }
+        // }
 
 
     }

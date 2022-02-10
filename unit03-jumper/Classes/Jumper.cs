@@ -5,53 +5,61 @@ namespace unit03_jumper.Classes
 {
     class Jumper
     {
-        private bool _cutParachute = false;
+        private bool cutParachute = false;
 
-        private List<string> _parachuteList = new List<string>();
+        private List<string> parachuteList = new List<string>();
 
         // add the parts of parachute into the parachute list.
         public void CreateParachutes()
         {
-            _parachuteList.Add("  ___");
-            _parachuteList.Add(" /___\\");
-            _parachuteList.Add(" \\   /");
-            _parachuteList.Add("  \\ /");
-            _parachuteList.Add("   o");
-            _parachuteList.Add("  /|\\");
-            _parachuteList.Add("  / \\");
+            parachuteList.Add("  ___");
+            parachuteList.Add(" /___\\");
+            parachuteList.Add(" \\   /");
+            parachuteList.Add("  \\ /");
+            parachuteList.Add("   o");
+            parachuteList.Add("  /|\\");
+            parachuteList.Add("  / \\");
         }
         
         public void DoUpdate(bool guessRight)
         {
             if (guessRight)
             {
-                _cutParachute = false;
+                cutParachute = false;
             }
             else
             {
-                _cutParachute = true;
+                cutParachute = true;
+            }
+
+            CutParachuts();
+
+            if (parachuteList[0] == "   o")
+            {
+                parachuteList[0] = "   x";
             }
         }
 
-        public void CutParachuts()
+        private void CutParachuts()
         {
-            if (_cutParachute)
+            if (cutParachute)
             {
-                _parachuteList.RemoveAt(0);
+                parachuteList.RemoveAt(0);
             }
             
-            if (_parachuteList[0] == "o")
+            if (parachuteList[0] == "   o")
             {
-                _parachuteList[0] = "x";
+                parachuteList[0] = "   x";
             }
         }
 
         public void GetDisplayParachuts()
         {
-            foreach(string part in _parachuteList)
+            foreach(string part in parachuteList)
             {
                 Console.WriteLine(part);
             }
+
             Console.WriteLine("");
         }
 
