@@ -5,7 +5,7 @@ namespace unit03_jumper
     class Terminal_services
     {
         private string userguess = " ";
-        public void _Terminal_services(string displaystring1 )
+        public void get_Terminal_services(string displaystring1 )
         {
            Console.WriteLine(displaystring1); 
         }
