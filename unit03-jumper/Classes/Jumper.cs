@@ -42,15 +42,13 @@ namespace unit03_jumper
 
         private void CutParachuts()
         {
-<<<<<<< HEAD
             if (cutParachute)
-=======
             //for (int i = 0; i < _parachuteList.length; i++)
             //{
-            //    if (_cutParachute)
-                 //{
+            //    
+             
             //   _parachuteList.RemoveAt(0);
-                //}
+        
             //    if (_parachuteList[0] == "o")
             //   {
             //    _parachuteList[0] = "x";
@@ -60,8 +58,8 @@ namespace unit03_jumper
             //        _cutParachute = false;
             //   }
             //}
-            if (_cutParachute)
->>>>>>> 8774f8aff78fe7bba39e1d3a9e7f94fb31a2cf99
+           // if (_cutParachute)
+
             {
                 parachuteList.RemoveAt(0);
             }
