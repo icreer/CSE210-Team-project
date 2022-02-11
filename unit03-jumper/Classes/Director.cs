@@ -2,6 +2,10 @@ using System;
 
 namespace unit03_jumper
 {
+    /*************************************************************************************
+    * The Director Class cordinates all information from all other classes. In a sence this
+    * class is the mangarer of the game.
+    ************************************************************************************/
     class Director
     {
         private Jumper jumper = new Jumper();
@@ -13,10 +17,6 @@ namespace unit03_jumper
         private string displaystring1;
         private string displaystring2;
 
-        public Director()
-        {
-
-        }
 
         /************************************************************************************
         * This game function job is to run the game by calling fuction in classes that run

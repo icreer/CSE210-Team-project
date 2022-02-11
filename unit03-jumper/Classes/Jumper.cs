@@ -3,6 +3,11 @@ using System.Collections.Generic;
 
 namespace unit03_jumper
 {
+    /*************************************************************************************
+    * The Jumper class deals with the guy and the parachute. This class deals with all things
+    * to generating the parachute and the guy. There is four fuction in this program.
+    * The main develper is Yat Lam.
+    ************************************************************************************/
     class Jumper
     {
         private bool cutParachute = false;
@@ -24,9 +29,7 @@ namespace unit03_jumper
         }
         
         public bool DoUpdate(bool guessRight)
-        {
-            
-            
+        { 
              if (guessRight)
             {
                 cutParachute = false;
@@ -35,11 +38,7 @@ namespace unit03_jumper
             {
                 cutParachute = true;
             }
-                
-                
-            
              canplay= CutParachuts();
-
              return canplay;
         }
 
