@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace unit03_jumper
 {
+    /*************************************************************************************
+    * The Word class deals with anything with the word the user is trying to figure out.
+    * There is 4 function in this class that help with dealing with the word 
+    * or in other words the game borad. Each fuction has there own discription.
+    * Main develper of this class was Isaac Creer
+    ************************************************************************************/
     class Word
     {
         private string word_to_figure_out;
@@ -18,7 +24,7 @@ namespace unit03_jumper
         ************************************************************/
         public string figure_out_word()
         {
-            word_to_figure_out = word_list[ranmdomwordgenirator()];
+            word_to_figure_out = word_list[ranmdomnumbergenirator()];
             for (int i = 0; i < word_to_figure_out.Length;i++)
             {
                 dashes += "_ ";
@@ -29,7 +35,7 @@ namespace unit03_jumper
         * This function just generates a random number that goes to
         * the word_list of figure out what word the user has to find
         ***********************************************************/
-        public int ranmdomwordgenirator()
+        public int ranmdomnumbergenirator()
         {
 
              Random newnumber = new Random();
@@ -58,12 +64,6 @@ namespace unit03_jumper
             } 
             return dashes;
         }
-
-        /*public void GetDisplaydashes()
-        {
-            Console.Write(this.dashes);
-            Console.WriteLine("");
-        } */
 
         /***********************************************************
         * This fuction helps with make sure that the player can keep
