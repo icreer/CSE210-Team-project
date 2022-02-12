@@ -27,7 +27,7 @@ namespace unit03_jumper
             parachuteList.Add("  / \\");
             
         }
-        
+        // This function updates the parachute list
         public bool DoUpdate(bool guessRight)
         { 
              if (guessRight)
@@ -42,6 +42,7 @@ namespace unit03_jumper
              return canplay;
         }
 
+        // This fuction deals with cutting the parachuts 
         private bool CutParachuts()
         {
             if(cutParachute)
@@ -57,7 +58,7 @@ namespace unit03_jumper
             }
             return canplay;
         }
-
+        // This fuction displayes the Parachute
         public void GetDisplayParachuts()
         {
             foreach(string part in parachuteList)

@@ -11,12 +11,19 @@ namespace unit03_jumper
     class Terminal_services
     {
         private string userguess = " ";
+        /*****************************************************
+        * This get_Terminal_services function main job is to display 
+        * the string that the user needs to see
+        *******************************************************/
         public void get_Terminal_services(string displaystring1 )
         {
            Console.WriteLine(displaystring1);
            Console.WriteLine(" "); 
         }
-       
+        /*****************************************************
+        * The GetGuess function job is to get the user guess and 
+        * return it to the Director class
+        *******************************************************/
         public string GetGuess()
         {
             Console.Write("Guess a letter [a-z]: ");
