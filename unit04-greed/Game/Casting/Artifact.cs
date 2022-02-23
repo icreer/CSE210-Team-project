@@ -3,6 +3,10 @@ namespace Unit04.Game.Casting
     // TODO: Implement the Artifact class here
 
     // 1) Add the class declaration. Use the following class comment. Make sure you
+    class Artifact
+    {
+
+    }
     //    inherit from the Actor class.
 
         /// <summary>
