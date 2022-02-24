@@ -68,7 +68,8 @@ namespace Unit04.Game.Directing
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
             robot.MoveNext(maxX, maxY);
-
+            
+            
             // foreach (Actor actor in artifacts)
             // {
             //     if (robot.GetPosition().Equals(actor.GetPosition()))
