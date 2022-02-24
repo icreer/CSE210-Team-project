@@ -22,7 +22,11 @@ namespace Unit04
         private static int COLS = 60;
         private static int ROWS = 40;
         private static string CAPTION = "Robot Finds Kitten";
+<<<<<<< HEAD
        // private static string DATA_PATH = "Data/messages.txt";
+=======
+        private static string DATA_PATH = "messages.txt";
+>>>>>>> 704c5142eb028f93b9b32c494d56bf1d874a3d5e
         private static Color WHITE = new Color(255, 255, 255);
         private static int DEFAULT_ARTIFACTS = 40;
 
