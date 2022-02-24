@@ -14,7 +14,7 @@ namespace Unit04.Game.Casting
         /// </summary>
     public class Artifact : Actor
     {
-        private string hi = "hi";
+        private string hi;
     // 2) Create the class constructor. Use the following method comment.
         
         /// <summary>
@@ -42,7 +42,7 @@ namespace Unit04.Game.Casting
         /// <param name="message">The given message.</param>
         public void SetMessage(string message)
         {
-
+            hi = message;
         }
     }
 }
