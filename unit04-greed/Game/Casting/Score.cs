@@ -2,16 +2,25 @@ namespace Unit04.Game.Casting
 {
     public class Score
     {
-        private int score;
+        private int score = 0;
         public int getScore()
         {
             return score;
         }
 
-        public void setscore(int playerscore)
+        public void setscore(bool hitgem)
         {
-            score = playerscore;
+            if (hitgem)
+            {
+                score += 10;
+            }
+            else
+            {
+                score -= 10;
+            }
+            
         }
+    
         
     }
 }
