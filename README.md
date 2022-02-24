@@ -1,7 +1,7 @@
 # CSE 210 Developer Projects
 # Members
 Daniel Akalws
-Yat Lam
+Yat Lam lam20034.byui.edu
 Isaac Creer
 
 This repo contains the starter code for the CSE 210 Developer Projects.
