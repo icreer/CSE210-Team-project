@@ -100,9 +100,9 @@ namespace Unit04
                     int rdx = random.Next(1, 5);
                     int rdy = random.Next(1, 5);
                     Point rposition = new Point(rx, ry);
-                    rock.SetPosition(rposition);
-                    Point rvelocity = new Point(rdx,rdy);
-                    rock.SetVelocity(rvelocity);
+                    rock.SetPosition(new Point(random.Next(0,900),MAX_Y));
+                    //Point rvelocity = new Point(rdx,rdy);
+                    //rock.SetVelocity(rvelocity);
                    // add++;
                     cast.AddActor("rocks", rock);
                 }
