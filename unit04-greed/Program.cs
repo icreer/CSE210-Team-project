@@ -18,7 +18,7 @@ namespace Unit04
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
         private static int CELL_SIZE = 15;
-        private static int FONT_SIZE = 15;
+        private static int FONT_SIZE = 25;
         private static int COLS = 60;
         private static int ROWS = 40;
 
@@ -37,6 +37,8 @@ namespace Unit04
             // create the cast
             Cast cast = new Cast();
             Score score = new Score();
+            Random random = new Random();
+            
             // create the player
             Player player = new Player(FONT_SIZE, WHITE);
             cast.AddActor("player", player);
@@ -57,19 +59,30 @@ namespace Unit04
              robot.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
             cast.AddActor("robot", robot);
         */
+             int error = 1;
 
             Actor gems = new Actor();
             gems.SetText("*");
             gems.SetFontSize(FONT_SIZE);
-            gems.SetColor(WHITE);
-            gems.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
+            int r = random.Next(0, 256);
+            int g = random.Next(0, 256);
+            int b = random.Next(0, 256);
+            Color color = new Color(r, g, b);
+            int place = MAX_X/random.Next(1,10);
+            gems.SetColor(color);
+            gems.SetPosition(new Point(place , MAX_Y ));
             cast.AddActor("gems", gems);
 
             Actor rocks = new Actor();
-            rocks.SetText("[");
+            rocks.SetText("o");
             rocks.SetFontSize(FONT_SIZE);
-            rocks.SetColor(WHITE);
-            rocks.SetPosition(new Point(MAX_X/3,MAX_Y /2));
+            int rr = random.Next(0, 256);
+            int gr = random.Next(0, 256);
+            int br = random.Next(0, 256);
+            Color color_rock = new Color(rr, gr, br);
+            rocks.SetColor(color_rock);
+            int place_rock = MAX_X/random.Next(1,10);
+            rocks.SetPosition(new Point( place_rock,MAX_Y ));
             cast.AddActor("rocks", rocks);
 
 
@@ -77,7 +90,7 @@ namespace Unit04
            // List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
 
         //     // create the artifacts
-        //     Random random = new Random();
+            
         //     for (int i = 0; i < DEFAULT_ARTIFACTS; i++)
         //      {
         //          string text = ((char)random.Next(33, 126)).ToString();

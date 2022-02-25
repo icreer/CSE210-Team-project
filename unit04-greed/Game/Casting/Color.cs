@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 
 namespace Unit04.Game.Casting
@@ -15,6 +16,7 @@ namespace Unit04.Game.Casting
         private int green = 0;
         private int blue = 0;
         private int alpha = 255;
+        Random random = new Random();
 
         /// <summary>
         /// Constructs a new instance of Color using the given red, green and blue values.
@@ -63,6 +65,14 @@ namespace Unit04.Game.Casting
         public int GetRed()
         {
             return red;
+        }
+
+        public int GetRandomcolor()
+        {
+            int r = random.Next(0, 256);
+            int g = random.Next(0, 256);
+            int b = random.Next(0, 256);
+            return r;//Color(r,g,b);
         }
 
     }

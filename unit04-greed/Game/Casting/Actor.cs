@@ -13,7 +13,7 @@ namespace Unit04.Game.Casting
     public class Actor
     {
         private string text = "";
-        private int fontSize = 15;
+        private int fontSize = 25;
         private Color color = new Color(255, 255, 255); // white
         private Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);
@@ -155,6 +155,7 @@ namespace Unit04.Game.Casting
             }
             this.velocity = velocity;
         }
+       
 
     }
 }

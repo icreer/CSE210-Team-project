@@ -11,11 +11,16 @@ namespace Unit04.Game.Directing
     /// The responsibility of a Director is to control the sequence of play.
     /// </para>
     /// </summary>
-    public class Director
+    public class Director 
     {
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
         Score score = new Score();
+         Cast cast = new Cast();
+         Random random = new Random();
+        private static int MAX_X = 900;
+        private static int MAX_Y = 600;
+        private static int FONT_SIZE = 15;
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -37,8 +42,17 @@ namespace Unit04.Game.Directing
             videoService.OpenWindow();
             while (videoService.IsWindowOpen())
             {
+                if (random.Next(1,3) == 1 )
+                {
+                    set_create_gems();
+                }
+                else
+                {
+                    set_create_rocks();
+                }
                 GetInputs(cast);
                 Getgem(cast);
+                Getrocks(cast);
                 DoUpdates(cast);
                 DoOutputs(cast);
             }
@@ -90,33 +104,40 @@ namespace Unit04.Game.Directing
            
             for(int x = 0; x < gems.Count; x++)
             {
-                if (player.GetPosition().Equals(gems[x].GetPosition()))
+            if (player.GetPosition().Equals(gems[x].GetPosition()))
                 {
                     score.setscore(true);
                     break;
                 }
-                gems[x].MoveNext(maxX,maxY);
+                if ( maxY == 0)
+                {
+                    x = gems.Count;
+                }
+                else
+                {
+                    gems[x].MoveNext(maxX,maxY);
+                }
+                
             }
             for(int x = 0; x < rocks.Count; x++)
             {
                 if (player.GetPosition().Equals(rocks[x].GetPosition()))
                 {
                     score.setscore(false);
+                    x = rocks.Count;
                     break;
                 }
-                rocks[x].MoveNext(maxX,maxY);
+                if ( maxY == 0)
+                {
+                    x = rocks.Count;
+                }
+                else
+                {
+                    rocks[x].MoveNext(maxX,maxY);
+                }
+                
             }
-            player.MoveNext(maxX, maxY);
-
-            // foreach (Actor actor in artifacts)
-            // {
-            //    if (robot.GetPosition().Equals(actor.GetPosition()))
-            //     {
-            //         Artifact artifact = (Artifact) actor;
-            //         string message = artifact.GetMessage();
-            //         banner.SetText(message);
-            //     }
-            // } 
+            player.MoveNext(maxX, maxY); 
 
         }
 
@@ -130,6 +151,33 @@ namespace Unit04.Game.Directing
             videoService.ClearBuffer();
             videoService.DrawActors(actors);
             videoService.FlushBuffer();
+        }
+        public void set_create_gems()
+        {
+            Actor gems = new Actor();
+            gems.SetText("*");
+            gems.SetFontSize(FONT_SIZE);
+            int r = random.Next(0, 256);
+            int g = random.Next(0, 256);
+            int b = random.Next(0, 256);
+            Color color = new Color(r, g, b);
+            gems.SetColor(color);
+            gems.SetPosition(new Point(MAX_X/2 , MAX_Y ));
+            cast.AddActor("gems", gems);
+        }
+
+        public void set_create_rocks()
+        {
+            Actor rocks = new Actor();
+            rocks.SetText("[]");
+            rocks.SetFontSize(FONT_SIZE);
+            int rr = random.Next(0, 256);
+            int gr = random.Next(0, 256);
+            int br = random.Next(0, 256);
+            Color color_rock = new Color(rr, gr, br);
+            rocks.SetColor(color_rock);
+            rocks.SetPosition(new Point(MAX_X/3,MAX_Y ));
+            cast.AddActor("rocks", rocks);
         }
 
     }
