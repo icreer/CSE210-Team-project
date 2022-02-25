@@ -40,7 +40,6 @@ namespace Unit04.Game.Directing
             while (videoService.IsWindowOpen())
             {
                 GetInputs(cast);
-                Getgem(cast);
                 DoUpdates(cast);
                 DoOutputs(cast);
             }
@@ -62,10 +61,12 @@ namespace Unit04.Game.Directing
         {
             Random rand = new Random();
             Actor gems = cast.GetFirstActor("gems");
-            int y = rand.Next(1, 13);
+            int y = rand.Next(1, 5);
             Point velocity = new Point(0,y);
             gems.SetVelocity(velocity);
         }
+
+        
 
         /// <summary>
         /// Updates the robot's position and resolves any collisions with artifacts.
@@ -73,20 +74,30 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
         {
-<<<<<<< HEAD
+
             
             Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
             List<Actor> gems = cast.GetActors("gems");
+            List<Actor> rocks = cast.GetActors("rocks");
             banner.SetText("");
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
             for(int x = 0; x < gems.Count; x++)
             {
-                gems[x].MoveNext(maxX,maxY);
-            }
+                for(int r = 0; r < rocks.Count; r++)
+                {
+                 if(gems[x].GetPosition().GetY() == maxY)
+                 {
+                       cast.RemoveActor("gems",  gems[x]);
+                 }
+                 gems[x].MoveNext(maxX,maxY);
+                }
+            }   
+            //    
+            // }
             
-            robot.MoveNext(maxX, maxY);
+            // robot.MoveNext(maxX, maxY);
 
             // foreach (Actor actor in artifacts)
             // {
@@ -97,14 +108,14 @@ namespace Unit04.Game.Directing
             //         banner.SetText(message);
             //     }
             // } 
-=======
+
             // Actor banner = cast.GetFirstActor("banner");
-            Actor player = cast.GetFirstActor("player");
-            List<Actor> artifacts = cast.GetActors("artifacts");
+             Actor player = cast.GetFirstActor("player");
+             List<Actor> artifacts = cast.GetActors("artifacts");
 
             // banner.SetText("");
-            int maxX = videoService.GetWidth();
-            int maxY = videoService.GetHeight();
+           // int maxX = videoService.GetWidth();
+            //int maxY = videoService.GetHeight();
             player.MoveNext(maxX, maxY);
             
             
@@ -117,7 +128,7 @@ namespace Unit04.Game.Directing
                     
                 }
             } 
->>>>>>> 5dcba985cc3ac06f95bd96c10b2f594a5a2d6db0
+
         }
 
         /// <summary>

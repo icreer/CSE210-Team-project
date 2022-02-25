@@ -19,7 +19,7 @@ namespace Unit04
         private static int MAX_Y = 600;
         private static int CELL_SIZE = 15;
         private static int FONT_SIZE = 15;
-<<<<<<< HEAD
+
         //private static int COLS = 60;
        // private static int ROWS = 40;
         private static string CAPTION = "Robot Finds Kitten";
@@ -30,15 +30,13 @@ namespace Unit04
 
           private static Color WHITE = new Color(255, 255, 255);
       // private static int DEFAULT_ARTIFACTS = 40;
-=======
-        private static int COLS = 60;
-        private static int ROWS = 40;
+        // private static int COLS = 60;
+        // private static int ROWS = 40;
 
-        private static string CAPTION = "Greed";
-        private static string DATA_PATH = "messages.txt";
-        private static Color WHITE = new Color(255, 255, 255);
-        private static int DEFAULT_ARTIFACTS = 40;
->>>>>>> 5dcba985cc3ac06f95bd96c10b2f594a5a2d6db0
+        // private static string CAPTION = "Greed";
+        // private static string DATA_PATH = "messages.txt";
+        // private static Color WHITE = new Color(255, 255, 255);
+        // private static int DEFAULT_ARTIFACTS = 40
 
 
         /// <summary>
@@ -69,22 +67,60 @@ namespace Unit04
         //     robot.SetColor(WHITE);
         //     robot.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
         //     cast.AddActor("robot", robot);
+            //bool creat = true;
+            int count = 0;
+            Random rand = new Random();
+            //while(creat)
+            for(count = 0; count <= 20; count++)
+            {
+                
+                //if(count == 100)
+               // {
+                   // creat = false;
+               // }
+                    Actor gem = new Actor();
+                    gem.SetText("#");
+                    gem.SetFontSize(FONT_SIZE);
+                    gem.SetColor(WHITE);
+                    int x = rand.Next(1, 5);
+                    int y = 0;
+                    int dx = rand.Next(1, 5);
+                    int dy = rand.Next(1, 5);
+                    Point position = new Point(x, y);
+                    gem.SetPosition(position);
+                    Point velocity = new Point(dx,dy);
+                    gem.SetVelocity(velocity);
+                    //count++;
+                    cast.AddActor("gems", gem);
+            }
 
-<<<<<<< HEAD
-            Actor gems = new Actor();
-            gems.SetText("#");
-            gems.SetFontSize(FONT_SIZE);
-            gems.SetColor(WHITE);
-            gems.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
-            cast.AddActor("gems", gems);
-
-
+           
+            int add = 0;
+            Random random = new Random();
+                for(add = 0; add <= 50; add++)
+                {
+                    Actor rock = new Actor();
+                    rock.SetText("");
+                    rock.SetFontSize(FONT_SIZE);
+                    rock.SetColor(WHITE);
+                    int rx = rand.Next(1, 5);
+                    int ry = 0;
+                    int rdx = random.Next(1, 5);
+                    int rdy = random.Next(1, 5);
+                    Point rposition = new Point(rx, ry);
+                    rock.SetPosition(rposition);
+                    Point rvelocity = new Point(rdx,rdy);
+                    rock.SetVelocity(rvelocity);
+                   // add++;
+                    cast.AddActor("rocks", rock);
+                }
+                    
             // load the messages
            // List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
-=======
+
         //     // load the messages
         //    List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
->>>>>>> 5dcba985cc3ac06f95bd96c10b2f594a5a2d6db0
+
 
         //     // create the artifacts
         //     Random random = new Random();
