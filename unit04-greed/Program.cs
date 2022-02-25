@@ -28,6 +28,7 @@ namespace Unit04
         private static int DEFAULT_ARTIFACTS = 40;
 
 
+
         /// <summary>
         /// Starts the program using the given arguments.
         /// </summary>
@@ -52,6 +53,66 @@ namespace Unit04
             cast.AddActor("banner", banner);
 
         //     // create the robot
+        //     Actor robot = new Actor();
+        //     robot.SetText("#");
+        //     robot.SetFontSize(FONT_SIZE);
+        //     robot.SetColor(WHITE);
+        //     robot.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
+        //     cast.AddActor("robot", robot);
+            //bool creat = true;
+            int count = 0;
+            Random rand = new Random();
+            //while(creat)
+            for(count = 0; count <= 20; count++)
+            {
+                
+                //if(count == 100)
+               // {
+                   // creat = false;
+               // }
+                    Actor gem = new Actor();
+                    gem.SetText("*");
+                    gem.SetFontSize(FONT_SIZE);
+                    gem.SetColor(WHITE);
+                    int x = rand.Next(1, 5);
+                    int y = 0;
+                    int dx = rand.Next(1, 5);
+                    int dy = rand.Next(1, 5);
+                    Point position = new Point(x, y);
+                    gem.SetPosition(position);
+                    Point velocity = new Point(dx,dy);
+                    gem.SetVelocity(velocity);
+                    //count++;
+                    cast.AddActor("gems", gem);
+            }
+
+           
+            int add = 0;
+           // Random random = new Random();
+                for(add = 0; add <= 50; add++)
+                {
+                    Actor rock = new Actor();
+                    rock.SetText("o");
+                    rock.SetFontSize(FONT_SIZE);
+                    rock.SetColor(WHITE);
+                    int rx = rand.Next(1, 5);
+                    int ry = 0;
+                    int rdx = random.Next(1, 5);
+                    int rdy = random.Next(1, 5);
+                    Point rposition = new Point(rx, ry);
+                    rock.SetPosition(rposition);
+                    Point rvelocity = new Point(rdx,rdy);
+                    rock.SetVelocity(rvelocity);
+                   // add++;
+                    cast.AddActor("rocks", rock);
+                }
+                    
+            // load the messages
+           // List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
+
+        //     // load the messages
+        //    List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
+
             Actor robot = new Actor();
         /*     robot.SetText("#");
              robot.SetFontSize(FONT_SIZE);

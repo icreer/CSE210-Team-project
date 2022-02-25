@@ -74,7 +74,7 @@ namespace Unit04.Game.Directing
         {
             Random rand = new Random();
             Actor gems = cast.GetFirstActor("gems");
-            int y = rand.Next(1, 13);
+            int y = rand.Next(1, 5);
             Point velocity = new Point(0,y);
             gems.SetVelocity(velocity);
         }
@@ -104,7 +104,26 @@ namespace Unit04.Game.Directing
            
             for(int x = 0; x < gems.Count; x++)
             {
+
             if (player.GetPosition().Equals(gems[x].GetPosition()))
+            {
+
+                for(int r = 0; r < rocks.Count; r++)
+                {
+                 if(gems[x].GetPosition().GetY() == maxY)
+                 {
+                       cast.RemoveActor("gems",  gems[x]);
+                 }
+                 gems[x].MoveNext(maxX,maxY);
+                }
+            }   
+            //    
+            // }
+            
+            // robot.MoveNext(maxX, maxY);
+
+                if (player.GetPosition().Equals(gems[x].GetPosition()))
+
                 {
                     score.setscore(true);
                     break;
@@ -137,7 +156,42 @@ namespace Unit04.Game.Directing
                 }
                 
             }
+
             player.MoveNext(maxX, maxY); 
+
+            player.MoveNext(maxX, maxY);
+
+
+            // foreach (Actor actor in artifacts)
+            // {
+            //    if (robot.GetPosition().Equals(actor.GetPosition()))
+            //     {
+            //         Artifact artifact = (Artifact) actor;
+            //         string message = artifact.GetMessage();
+            //         banner.SetText(message);
+            //     }
+            // } 
+
+
+            // Actor banner = cast.GetFirstActor("banner");
+             //Actor player = cast.GetFirstActor("player");
+             List<Actor> artifacts = cast.GetActors("artifacts");
+
+            // banner.SetText("");
+           // int maxX = videoService.GetWidth();
+            //int maxY = videoService.GetHeight();
+            player.MoveNext(maxX, maxY);
+            
+            
+            foreach (Actor actor in artifacts)
+            {
+                if (player.GetPosition().Equals(actor.GetPosition()))
+                {
+                    Artifact artifact = (Artifact) actor;
+                    string message = artifact.GetMessage();
+                    
+                }
+            } 
 
         }
 
