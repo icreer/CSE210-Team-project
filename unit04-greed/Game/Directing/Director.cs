@@ -76,7 +76,7 @@ namespace Unit04.Game.Directing
                 {
                     Artifact artifact = (Artifact) actor;
                     string message = artifact.GetMessage();
-                    // banner.SetText(message);
+                    
                 }
             } 
         }

@@ -36,18 +36,18 @@ namespace Unit04
         {
             // create the cast
             Cast cast = new Cast();
-
+            Score score = new Score();
             // create the player
             Player player = new Player(FONT_SIZE, WHITE);
             cast.AddActor("player", player);
 
-        //     // create the banner
-        //     Actor banner = new Actor();
-        //     banner.SetText("");
-        //     banner.SetFontSize(FONT_SIZE);
-        //     banner.SetColor(WHITE);
-        //     banner.SetPosition(new Point(CELL_SIZE, 0));
-        //     cast.AddActor("banner", banner);
+             // create the banner
+            Actor banner = new Actor();
+            banner.SetText($"Score: {score.getScore()}");
+            banner.SetFontSize(FONT_SIZE);
+            banner.SetColor(WHITE);
+            banner.SetPosition(new Point(CELL_SIZE, 0));
+            cast.AddActor("banner", banner);
 
         //     // create the robot
         //     Actor robot = new Actor();
