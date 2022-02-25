@@ -124,10 +124,6 @@ namespace Unit04.Game.Directing
                     score.setscore(true);
                     break;
                 }
-                if ( maxY == 0)
-                {
-                    x = gems.Count;
-                }
                 else
                 {
                     gems[x].MoveNext(maxX,maxY);
@@ -141,10 +137,6 @@ namespace Unit04.Game.Directing
                     score.setscore(false);
                     x = rocks.Count;
                     break;
-                }
-                if ( maxY == 0)
-                {
-                    x = rocks.Count;
                 }
                 else
                 {
