@@ -16,11 +16,11 @@ namespace Unit04.Game.Directing
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
         Score score = new Score();
-         Cast cast = new Cast();
-         Random random = new Random();
+        Cast cast = new Cast();
+        Random random = new Random();
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
-        private static int FONT_SIZE = 15;
+        private static int FONT_SIZE = 20;
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -43,8 +43,8 @@ namespace Unit04.Game.Directing
             while (videoService.IsWindowOpen())
             {
                 GetInputs(cast);
-                //Getgem(cast);
-                //Getrocks(cast);
+                Getgem(cast);
+                Getrocks(cast);
                 DoUpdates(cast);
                 DoOutputs(cast);
             }

@@ -14,11 +14,11 @@ namespace Unit04
     /// </summary>
     class Program
     {
-        private static int FRAME_RATE = 30;
+        private static int FRAME_RATE = 24;
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
-        private static int CELL_SIZE = 15;
-        private static int FONT_SIZE = 15;
+        private static int CELL_SIZE = 30;
+        private static int FONT_SIZE = 20;
         private static int COLS = 60;
         private static int ROWS = 40;
 
@@ -52,8 +52,8 @@ namespace Unit04
             banner.SetPosition(new Point(CELL_SIZE, 0));
             cast.AddActor("banner", banner);
         
-            for(int count = 0; count <= 20; count++)
-            {
+           // for(int count = 0; count <= 20; count++)
+           // {
                 
                 Actor gem = new Actor();
                 gem.SetText("*");
@@ -72,10 +72,10 @@ namespace Unit04
                 Point velocity = new Point(dx,dy);
                 gem.SetVelocity(velocity);
                 cast.AddActor("gems", gem);
-            }
+           // }
             
-            for(int add = 0; add <= 50; add++)
-            {
+            //for(int add = 0; add <= 50; add++)
+           // {
                 Actor rock = new Actor();
                 rock.SetText("o");
                 rock.SetFontSize(FONT_SIZE);
@@ -93,7 +93,7 @@ namespace Unit04
                 Point rvelocity = new Point(rdx,rdy);
                 rock.SetVelocity(rvelocity);
                 cast.AddActor("rocks", rock);
-            }
+           // }
                    
             // start the game
             KeyboardService keyboardService = new KeyboardService(CELL_SIZE);
