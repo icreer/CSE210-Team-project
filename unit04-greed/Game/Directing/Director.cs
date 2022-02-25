@@ -82,8 +82,15 @@ namespace Unit04.Game.Directing
             banner.SetText($"Score: {score.getScore()}");
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
+           
             for(int x = 0; x < gems.Count; x++)
             {
+                if (player.GetPosition().Equals(gems[x].GetPosition()))
+                {
+                    score.setscore(true);
+                    Console.WriteLine(score.getScore());
+                    break;
+                }
                 gems[x].MoveNext(maxX,maxY);
             }
             for(int x = 0; x < rocks.Count; x++)
@@ -94,7 +101,7 @@ namespace Unit04.Game.Directing
 
             // foreach (Actor actor in artifacts)
             // {
-            //     if (robot.GetPosition().Equals(actor.GetPosition()))
+            //    if (robot.GetPosition().Equals(actor.GetPosition()))
             //     {
             //         Artifact artifact = (Artifact) actor;
             //         string message = artifact.GetMessage();
