@@ -24,6 +24,7 @@ namespace Unit04.Game.Casting
         }
 
     }
+<<<<<<< HEAD
 
 
    
@@ -70,4 +71,7 @@ namespace Unit04.Game.Casting
     //     }
     //}
 
+=======
+
+>>>>>>> f3640b3f8b8c0b7f0ca44ee2f383f0b294b3bd23
 }

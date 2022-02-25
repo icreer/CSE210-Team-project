@@ -15,7 +15,7 @@ namespace Unit04.Game.Directing
     {
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
-        
+        Score score = new Score();
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -34,8 +34,6 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         public void StartGame(Cast cast)
         {
-            
-            
             videoService.OpenWindow();
             while (videoService.IsWindowOpen())
             {
@@ -65,26 +63,47 @@ namespace Unit04.Game.Directing
             Point velocity = new Point(0,y);
             gems.SetVelocity(velocity);
         }
+<<<<<<< HEAD
 
         
 
+=======
+        private void Getrocks(Cast cast)
+        {
+            Random rand = new Random();
+            Actor rocks = cast.GetFirstActor("rocks");
+            int y = rand.Next(1, 13);
+            Point velocity = new Point(0,y);
+            rocks.SetVelocity(velocity);
+        }
+>>>>>>> f3640b3f8b8c0b7f0ca44ee2f383f0b294b3bd23
         /// <summary>
         /// Updates the robot's position and resolves any collisions with artifacts.
         /// </summary>
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
         {
+<<<<<<< HEAD
 
+=======
+>>>>>>> f3640b3f8b8c0b7f0ca44ee2f383f0b294b3bd23
             
             Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
+            Actor player = cast.GetFirstActor("player");
             List<Actor> gems = cast.GetActors("gems");
             List<Actor> rocks = cast.GetActors("rocks");
+<<<<<<< HEAD
             banner.SetText("");
+=======
+            banner.SetText($"Score: {score.getScore()}");
+>>>>>>> f3640b3f8b8c0b7f0ca44ee2f383f0b294b3bd23
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
+           
             for(int x = 0; x < gems.Count; x++)
             {
+<<<<<<< HEAD
                 for(int r = 0; r < rocks.Count; r++)
                 {
                  if(gems[x].GetPosition().GetY() == maxY)
@@ -98,16 +117,36 @@ namespace Unit04.Game.Directing
             // }
             
             // robot.MoveNext(maxX, maxY);
+=======
+                if (player.GetPosition().Equals(gems[x].GetPosition()))
+                {
+                    score.setscore(true);
+                    break;
+                }
+                gems[x].MoveNext(maxX,maxY);
+            }
+            for(int x = 0; x < rocks.Count; x++)
+            {
+                if (player.GetPosition().Equals(rocks[x].GetPosition()))
+                {
+                    score.setscore(false);
+                    break;
+                }
+                rocks[x].MoveNext(maxX,maxY);
+            }
+            player.MoveNext(maxX, maxY);
+>>>>>>> f3640b3f8b8c0b7f0ca44ee2f383f0b294b3bd23
 
             // foreach (Actor actor in artifacts)
             // {
-            //     if (robot.GetPosition().Equals(actor.GetPosition()))
+            //    if (robot.GetPosition().Equals(actor.GetPosition()))
             //     {
             //         Artifact artifact = (Artifact) actor;
             //         string message = artifact.GetMessage();
             //         banner.SetText(message);
             //     }
             // } 
+<<<<<<< HEAD
 
             // Actor banner = cast.GetFirstActor("banner");
              Actor player = cast.GetFirstActor("player");
@@ -129,6 +168,9 @@ namespace Unit04.Game.Directing
                 }
             } 
 
+=======
+
+>>>>>>> f3640b3f8b8c0b7f0ca44ee2f383f0b294b3bd23
         }
 
         /// <summary>

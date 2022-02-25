@@ -19,6 +19,7 @@ namespace Unit04
         private static int MAX_Y = 600;
         private static int CELL_SIZE = 15;
         private static int FONT_SIZE = 15;
+<<<<<<< HEAD
 
         //private static int COLS = 60;
        // private static int ROWS = 40;
@@ -37,6 +38,15 @@ namespace Unit04
         // private static string DATA_PATH = "messages.txt";
         // private static Color WHITE = new Color(255, 255, 255);
         // private static int DEFAULT_ARTIFACTS = 40
+=======
+        private static int COLS = 60;
+        private static int ROWS = 40;
+
+        private static string CAPTION = "Greed";
+        private static string DATA_PATH = "messages.txt";
+        private static Color WHITE = new Color(255, 255, 255);
+        private static int DEFAULT_ARTIFACTS = 40;
+>>>>>>> f3640b3f8b8c0b7f0ca44ee2f383f0b294b3bd23
 
 
         /// <summary>
@@ -61,6 +71,7 @@ namespace Unit04
             cast.AddActor("banner", banner);
 
         //     // create the robot
+<<<<<<< HEAD
         //     Actor robot = new Actor();
         //     robot.SetText("#");
         //     robot.SetFontSize(FONT_SIZE);
@@ -121,6 +132,33 @@ namespace Unit04
         //     // load the messages
         //    List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
 
+=======
+            Actor robot = new Actor();
+        /*     robot.SetText("#");
+             robot.SetFontSize(FONT_SIZE);
+             robot.SetColor(WHITE);
+             robot.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
+            cast.AddActor("robot", robot);
+        */
+
+            Actor gems = new Actor();
+            gems.SetText("*");
+            gems.SetFontSize(FONT_SIZE);
+            gems.SetColor(WHITE);
+            gems.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
+            cast.AddActor("gems", gems);
+
+            Actor rocks = new Actor();
+            rocks.SetText("[");
+            rocks.SetFontSize(FONT_SIZE);
+            rocks.SetColor(WHITE);
+            rocks.SetPosition(new Point(MAX_X/3,MAX_Y /2));
+            cast.AddActor("rocks", rocks);
+
+
+            // load the messages
+           // List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
+>>>>>>> f3640b3f8b8c0b7f0ca44ee2f383f0b294b3bd23
 
         //     // create the artifacts
         //     Random random = new Random();
