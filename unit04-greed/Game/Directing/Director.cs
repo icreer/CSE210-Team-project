@@ -34,8 +34,6 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         public void StartGame(Cast cast)
         {
-            
-            
             videoService.OpenWindow();
             while (videoService.IsWindowOpen())
             {
@@ -66,7 +64,14 @@ namespace Unit04.Game.Directing
             Point velocity = new Point(0,y);
             gems.SetVelocity(velocity);
         }
-
+        private void Getrocks(Cast cast)
+        {
+            Random rand = new Random();
+            Actor rocks = cast.GetFirstActor("rocks");
+            int y = rand.Next(1, 13);
+            Point velocity = new Point(0,y);
+            rocks.SetVelocity(velocity);
+        }
         /// <summary>
         /// Updates the robot's position and resolves any collisions with artifacts.
         /// </summary>
@@ -88,13 +93,17 @@ namespace Unit04.Game.Directing
                 if (player.GetPosition().Equals(gems[x].GetPosition()))
                 {
                     score.setscore(true);
-                    Console.WriteLine(score.getScore());
                     break;
                 }
                 gems[x].MoveNext(maxX,maxY);
             }
             for(int x = 0; x < rocks.Count; x++)
             {
+                if (player.GetPosition().Equals(rocks[x].GetPosition()))
+                {
+                    score.setscore(false);
+                    break;
+                }
                 rocks[x].MoveNext(maxX,maxY);
             }
             player.MoveNext(maxX, maxY);

@@ -69,7 +69,7 @@ namespace Unit04
             rocks.SetText("[");
             rocks.SetFontSize(FONT_SIZE);
             rocks.SetColor(WHITE);
-            rocks.SetPosition(new Point(MAX_X/3,MAX_Y /3));
+            rocks.SetPosition(new Point(MAX_X/3,MAX_Y /2));
             cast.AddActor("rocks", rocks);
 
 
