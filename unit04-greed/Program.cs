@@ -18,12 +18,12 @@ namespace Unit04
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
         private static int CELL_SIZE = 15;
-        private static int FONT_SIZE = 25;
+        private static int FONT_SIZE = 15;
         private static int COLS = 60;
         private static int ROWS = 40;
 
         private static string CAPTION = "Greed";
-        private static string DATA_PATH = "messages.txt";
+       
         private static Color WHITE = new Color(255, 255, 255);
         private static int DEFAULT_ARTIFACTS = 40;
 
@@ -55,6 +55,7 @@ namespace Unit04
             int count = 0;
             Random rand = new Random();
             //while(creat)
+            /*
             for(count = 0; count <= 20; count++)
             {
                 
@@ -78,10 +79,10 @@ namespace Unit04
                     cast.AddActor("gems", gem);
             }
 
-           
+           */
             int add = 0;
            // Random random = new Random();
-                for(add = 0; add <= 50; add++)
+              /*  for(add = 0; add <= 50; add++)
                 {
                     Actor rock = new Actor();
                     rock.SetText("o");
@@ -99,10 +100,9 @@ namespace Unit04
                     rock.SetPosition(new Point(random.Next(0,900),MAX_Y));
                     Point rvelocity = new Point(rdx,rdy);
                     rock.SetVelocity(rvelocity);
-                   // add++;
                     cast.AddActor("rocks", rock);
                 }
-                    
+             */       
             // start the game
             KeyboardService keyboardService = new KeyboardService(CELL_SIZE);
             VideoService videoService 
