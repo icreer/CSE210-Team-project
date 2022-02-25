@@ -53,9 +53,9 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         private void GetInputs(Cast cast)
         {
-            Actor robot = cast.GetFirstActor("robot");
+            Actor player = cast.GetFirstActor("player");
             Point velocity = keyboardService.GetDirection();
-            robot.SetVelocity(velocity);     
+            player.SetVelocity(velocity);     
         }
          
         private void Getgem(Cast cast)
@@ -73,6 +73,7 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
         {
+<<<<<<< HEAD
             
             Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
@@ -96,6 +97,27 @@ namespace Unit04.Game.Directing
             //         banner.SetText(message);
             //     }
             // } 
+=======
+            // Actor banner = cast.GetFirstActor("banner");
+            Actor player = cast.GetFirstActor("player");
+            List<Actor> artifacts = cast.GetActors("artifacts");
+
+            // banner.SetText("");
+            int maxX = videoService.GetWidth();
+            int maxY = videoService.GetHeight();
+            player.MoveNext(maxX, maxY);
+            
+            
+            foreach (Actor actor in artifacts)
+            {
+                if (player.GetPosition().Equals(actor.GetPosition()))
+                {
+                    Artifact artifact = (Artifact) actor;
+                    string message = artifact.GetMessage();
+                    
+                }
+            } 
+>>>>>>> 5dcba985cc3ac06f95bd96c10b2f594a5a2d6db0
         }
 
         /// <summary>

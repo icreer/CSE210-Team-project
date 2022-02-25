@@ -24,6 +24,7 @@ namespace Unit04.Game.Casting
         }
 
     }
+<<<<<<< HEAD
 
    
 
@@ -68,4 +69,6 @@ namespace Unit04.Game.Casting
     //         hi = message;
     //     }
     //}
+=======
+>>>>>>> 5dcba985cc3ac06f95bd96c10b2f594a5a2d6db0
 }
