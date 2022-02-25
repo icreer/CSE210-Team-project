@@ -24,51 +24,5 @@ namespace Unit04.Game.Casting
         }
 
     }
-<<<<<<< HEAD
 
-   
-
-    //    inherit from the Actor class.
-
-        /// <summary>
-        /// <para>An item of cultural or historical interest.</para>
-        /// <para>
-        /// The responsibility of an Artifact is to provide a message about itself.
-        /// </para>
-        /// </summary>
-    // public class Artifact : Actor
-    // {
-    //     private string hi;
-    // // 2) Create the class constructor. Use the following method comment.
-        
-    //     /// <summary>
-    //     /// Constructs a new instance of Artifact.
-    //     /// </summary>
-       
-
-    // // 3) Create the GetMessage() method. Use the following method comment.
-        
-    //     /// <summary>
-    //     /// Gets the artifact's message.
-    //     /// </summary>
-    //     /// <returns>The message as a string.</returns>
-    //     public string GetMessage()
-    //     {
-            
-    //         return hi;
-    //     }
-
-    // // 4) Create the SetMessage(string message) method. Use the following method comment.
-        
-    //     /// <summary>
-    //     /// Sets the artifact's message to the given value.
-    //     /// </summary>
-    //     /// <param name="message">The given message.</param>
-    //     public void SetMessage(string message)
-    //     {
-    //         hi = message;
-    //     }
-    //}
-=======
->>>>>>> 5dcba985cc3ac06f95bd96c10b2f594a5a2d6db0
 }

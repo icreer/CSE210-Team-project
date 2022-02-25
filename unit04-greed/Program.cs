@@ -19,18 +19,6 @@ namespace Unit04
         private static int MAX_Y = 600;
         private static int CELL_SIZE = 15;
         private static int FONT_SIZE = 15;
-<<<<<<< HEAD
-        //private static int COLS = 60;
-       // private static int ROWS = 40;
-        private static string CAPTION = "Robot Finds Kitten";
-
-       // private static string DATA_PATH = "Data/messages.txt";
-
-       // private static string DATA_PATH = "messages.txt";
-
-          private static Color WHITE = new Color(255, 255, 255);
-      // private static int DEFAULT_ARTIFACTS = 40;
-=======
         private static int COLS = 60;
         private static int ROWS = 40;
 
@@ -38,7 +26,6 @@ namespace Unit04
         private static string DATA_PATH = "messages.txt";
         private static Color WHITE = new Color(255, 255, 255);
         private static int DEFAULT_ARTIFACTS = 40;
->>>>>>> 5dcba985cc3ac06f95bd96c10b2f594a5a2d6db0
 
 
         /// <summary>
@@ -70,7 +57,7 @@ namespace Unit04
         //     robot.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
         //     cast.AddActor("robot", robot);
 
-<<<<<<< HEAD
+
             Actor gems = new Actor();
             gems.SetText("#");
             gems.SetFontSize(FONT_SIZE);
@@ -81,10 +68,6 @@ namespace Unit04
 
             // load the messages
            // List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
-=======
-        //     // load the messages
-        //    List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
->>>>>>> 5dcba985cc3ac06f95bd96c10b2f594a5a2d6db0
 
         //     // create the artifacts
         //     Random random = new Random();
