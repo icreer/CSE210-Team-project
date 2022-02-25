@@ -105,18 +105,18 @@ namespace Unit04.Game.Directing
             for(int x = 0; x < gems.Count; x++)
             {
 
-            if (player.GetPosition().Equals(gems[x].GetPosition()))
-            {
-
-                for(int r = 0; r < rocks.Count; r++)
+                if (player.GetPosition().Equals(gems[x].GetPosition()))
                 {
-                 if(gems[x].GetPosition().GetY() == maxY)
-                 {
-                       cast.RemoveActor("gems",  gems[x]);
-                 }
-                 gems[x].MoveNext(maxX,maxY);
-                }
-            }   
+
+                    for(int r = 0; r < rocks.Count; r++)
+                    {
+                        if(gems[x].GetPosition().GetY() == maxY)
+                        {
+                            cast.RemoveActor("gems",  gems[x]);
+                        }
+                        gems[x].MoveNext(maxX,maxY);
+                    }
+                }   
 
                 if (player.GetPosition().Equals(gems[x].GetPosition()))
 
@@ -130,6 +130,7 @@ namespace Unit04.Game.Directing
                 }
                 
             }
+            
             for(int x = 0; x < rocks.Count; x++)
             {
                 if (player.GetPosition().Equals(rocks[x].GetPosition()))
