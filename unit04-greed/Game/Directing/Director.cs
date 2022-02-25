@@ -42,17 +42,9 @@ namespace Unit04.Game.Directing
             videoService.OpenWindow();
             while (videoService.IsWindowOpen())
             {
-                if (random.Next(1,3) == 1 )
-                {
-                    set_create_gems();
-                }
-                else
-                {
-                    set_create_rocks();
-                }
                 GetInputs(cast);
-                Getgem(cast);
-                Getrocks(cast);
+                //Getgem(cast);
+                //Getrocks(cast);
                 DoUpdates(cast);
                 DoOutputs(cast);
             }
@@ -93,6 +85,14 @@ namespace Unit04.Game.Directing
         private void DoUpdates(Cast cast)
         {
             
+            if (random.Next(1,3) == 1 )
+            {
+                set_create_gems();
+            }
+            else
+            {
+                set_create_rocks();
+            }
             Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
             Actor player = cast.GetFirstActor("player");
@@ -117,10 +117,6 @@ namespace Unit04.Game.Directing
                  gems[x].MoveNext(maxX,maxY);
                 }
             }   
-            //    
-            // }
-            
-            // robot.MoveNext(maxX, maxY);
 
                 if (player.GetPosition().Equals(gems[x].GetPosition()))
 
@@ -159,40 +155,6 @@ namespace Unit04.Game.Directing
 
             player.MoveNext(maxX, maxY); 
 
-            player.MoveNext(maxX, maxY);
-
-
-            // foreach (Actor actor in artifacts)
-            // {
-            //    if (robot.GetPosition().Equals(actor.GetPosition()))
-            //     {
-            //         Artifact artifact = (Artifact) actor;
-            //         string message = artifact.GetMessage();
-            //         banner.SetText(message);
-            //     }
-            // } 
-
-
-            // Actor banner = cast.GetFirstActor("banner");
-             //Actor player = cast.GetFirstActor("player");
-             List<Actor> artifacts = cast.GetActors("artifacts");
-
-            // banner.SetText("");
-           // int maxX = videoService.GetWidth();
-            //int maxY = videoService.GetHeight();
-            player.MoveNext(maxX, maxY);
-            
-            
-            foreach (Actor actor in artifacts)
-            {
-                if (player.GetPosition().Equals(actor.GetPosition()))
-                {
-                    Artifact artifact = (Artifact) actor;
-                    string message = artifact.GetMessage();
-                    
-                }
-            } 
-
         }
 
         /// <summary>
@@ -208,30 +170,44 @@ namespace Unit04.Game.Directing
         }
         public void set_create_gems()
         {
-            Actor gems = new Actor();
-            gems.SetText("*");
-            gems.SetFontSize(FONT_SIZE);
+            Actor gem = new Actor();
+            gem.SetText("*");
+            gem.SetFontSize(FONT_SIZE);
             int r = random.Next(0, 256);
             int g = random.Next(0, 256);
             int b = random.Next(0, 256);
             Color color = new Color(r, g, b);
-            gems.SetColor(color);
-            gems.SetPosition(new Point(MAX_X/2 , MAX_Y ));
-            cast.AddActor("gems", gems);
+            gem.SetColor(color);
+            int x = random.Next(1, 5);
+            int y = 0;
+            int dx = 0;
+            int dy = random.Next(1, 5);
+            Point position = new Point(x, y);
+            gem.SetPosition(new Point (random.Next(0,900),MAX_Y));
+            Point velocity = new Point(dx,dy);
+            gem.SetVelocity(velocity);
+            cast.AddActor("gems", gem);
         }
 
         public void set_create_rocks()
         {
-            Actor rocks = new Actor();
-            rocks.SetText("[]");
-            rocks.SetFontSize(FONT_SIZE);
+            Actor rock = new Actor();
+            rock.SetText("o");
+            rock.SetFontSize(FONT_SIZE);
             int rr = random.Next(0, 256);
             int gr = random.Next(0, 256);
             int br = random.Next(0, 256);
             Color color_rock = new Color(rr, gr, br);
-            rocks.SetColor(color_rock);
-            rocks.SetPosition(new Point(MAX_X/3,MAX_Y ));
-            cast.AddActor("rocks", rocks);
+            rock.SetColor(color_rock);
+            int rx = random.Next(1, 5);
+            int ry = 0;
+            int rdx = 0;
+            int rdy = random.Next(1, 5);
+            Point rposition = new Point(rx, ry);
+            rock.SetPosition(new Point(random.Next(0,900),MAX_Y));
+            Point rvelocity = new Point(rdx,rdy);
+            rock.SetVelocity(rvelocity);
+            cast.AddActor("rocks", rock);
         }
 
     }
