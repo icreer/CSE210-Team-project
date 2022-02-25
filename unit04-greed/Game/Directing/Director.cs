@@ -76,7 +76,9 @@ namespace Unit04.Game.Directing
             
             Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
+            Actor player = cast.GetFirstActor("player");
             List<Actor> gems = cast.GetActors("gems");
+            List<Actor> rocks = cast.GetActors("rocks");
             banner.SetText($"Score: {score.getScore()}");
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
@@ -84,8 +86,11 @@ namespace Unit04.Game.Directing
             {
                 gems[x].MoveNext(maxX,maxY);
             }
-            
-           // robot.MoveNext(maxX, maxY);
+            for(int x = 0; x < rocks.Count; x++)
+            {
+                rocks[x].MoveNext(maxX,maxY);
+            }
+            player.MoveNext(maxX, maxY);
 
             // foreach (Actor actor in artifacts)
             // {

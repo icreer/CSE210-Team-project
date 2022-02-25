@@ -50,20 +50,27 @@ namespace Unit04
             cast.AddActor("banner", banner);
 
         //     // create the robot
-        //     Actor robot = new Actor();
-        //     robot.SetText("#");
-        //     robot.SetFontSize(FONT_SIZE);
-        //     robot.SetColor(WHITE);
-        //     robot.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
-        //     cast.AddActor("robot", robot);
-
+            Actor robot = new Actor();
+        /*     robot.SetText("#");
+             robot.SetFontSize(FONT_SIZE);
+             robot.SetColor(WHITE);
+             robot.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
+            cast.AddActor("robot", robot);
+        */
 
             Actor gems = new Actor();
-            gems.SetText("#");
+            gems.SetText("*");
             gems.SetFontSize(FONT_SIZE);
             gems.SetColor(WHITE);
             gems.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
             cast.AddActor("gems", gems);
+
+            Actor rocks = new Actor();
+            rocks.SetText("[");
+            rocks.SetFontSize(FONT_SIZE);
+            rocks.SetColor(WHITE);
+            rocks.SetPosition(new Point(MAX_X/3,MAX_Y /3));
+            cast.AddActor("rocks", rocks);
 
 
             // load the messages
