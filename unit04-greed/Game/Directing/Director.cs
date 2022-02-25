@@ -15,7 +15,7 @@ namespace Unit04.Game.Directing
     {
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
-        
+        Score score = new Score();
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -77,7 +77,7 @@ namespace Unit04.Game.Directing
             Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
             List<Actor> gems = cast.GetActors("gems");
-            banner.SetText("");
+            banner.SetText($"Score: {score.getScore()}");
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
             for(int x = 0; x < gems.Count; x++)
