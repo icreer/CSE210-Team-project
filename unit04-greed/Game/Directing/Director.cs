@@ -44,8 +44,8 @@ namespace Unit04.Game.Directing
             while (videoService.IsWindowOpen())
             {
                 GetInputs(cast);
-                Getgem(cast);
-                Getrocks(cast);
+               //Getgem(cast);
+                //Getrocks(cast);
                 DoUpdates(cast);
                 DoOutputs(cast);
             }
@@ -122,7 +122,12 @@ namespace Unit04.Game.Directing
                 if (IsCollionsion(player,gems[x]))
                 {
                     score.setscore(true);
+                    cast.RemoveActor("gems",  gems[x]);
                     break;
+                }
+                else if( gems[x].GetPosition().GetY() == 0)
+                {
+                    cast.RemoveActor("gems", gems[x]);
                 }
                 else
                 {
@@ -136,8 +141,12 @@ namespace Unit04.Game.Directing
                 if (IsCollionsion(player,rocks[x]))
                 {
                     score.setscore(false);
-                    x = rocks.Count;
+                    cast.RemoveActor("rocks",  rocks[x]);
                     break;
+                }
+                else if( rocks[x].GetPosition().GetY() == 0)
+                {
+                    cast.RemoveActor("rocks", rocks[x]);
                 }
                 else
                 {
