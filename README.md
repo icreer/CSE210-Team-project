@@ -2,7 +2,7 @@
 # Members
 Daniel Akalws
 Yat Lam lam20034.byui.edu
-Isaac Creer
+Isaac Creer isaaccreer@gmail.com
 
 This repo contains the starter code for the CSE 210 Developer Projects.
 
