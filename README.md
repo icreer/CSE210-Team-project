@@ -1,6 +1,6 @@
 # CSE 210 Developer Projects
 # Members
-Daniel Akalws
+Daniel Akalws aka19001@byui.edu
 Yat Lam lam20034.byui.edu
 Isaac Creer isaaccreer@gmail.com
 
