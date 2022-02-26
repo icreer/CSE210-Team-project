@@ -18,10 +18,13 @@ namespace Unit04.Game.Directing
         Score score = new Score();
         Cast cast = new Cast();
         Random random = new Random();
+
+        //Gems gem = new Gems();
+        //Gems rock = new Gems();
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
         private static int FONT_SIZE = 30;
-        private static int CELL_SIZE = 30;
+        private static int CELL_SIZE = 30;  
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -44,10 +47,10 @@ namespace Unit04.Game.Directing
             while (videoService.IsWindowOpen())
             {
                 GetInputs(cast);
-               //Getgem(cast);
-                //Getrocks(cast);
                 DoUpdates(cast);
                 DoOutputs(cast);
+                set_create_gems();
+                set_create_rocks();
             }
             videoService.CloseWindow();
         }
@@ -63,22 +66,6 @@ namespace Unit04.Game.Directing
             player.SetVelocity(velocity);     
         }
          
-        private void Getgem(Cast cast)
-        {
-            Random rand = new Random();
-            Actor gems = cast.GetFirstActor("gems");
-            int y = rand.Next(1, 5);
-            Point velocity = new Point(0,y);
-            gems.SetVelocity(velocity);
-        }
-        private void Getrocks(Cast cast)
-        {
-            Random rand = new Random();
-            Actor rocks = cast.GetFirstActor("rocks");
-            int y = rand.Next(1, 13);
-            Point velocity = new Point(0,y);
-            rocks.SetVelocity(velocity);
-        }
         /// <summary>
         /// Updates the robot's position and resolves any collisions with artifacts.
         /// </summary>
@@ -86,20 +73,54 @@ namespace Unit04.Game.Directing
         private void DoUpdates(Cast cast)
         {
             
-            if (random.Next(1,3) == 1 )
-            {
-                set_create_gems();
-            }
-            else
-            {
-                set_create_rocks();
-            }
+         if(random.Next(1,10) == 4) 
+         {  
+            Actor gem = new Actor();
+                gem.SetText("*");
+                gem.SetFontSize(FONT_SIZE);
+                int rg = random.Next(0, 256);
+                int g = random.Next(0, 256);
+                int b = random.Next(0, 256);
+                Color color = new Color(rg, g, b);
+                gem.SetColor(color);
+                int xg = random.Next(1, 5);
+                int y = 0;
+                int dx = 0;
+                int dy = random.Next(1, 5);
+                Point position = new Point(xg, y);
+                gem.SetPosition(new Point (random.Next(0,900),MAX_Y));
+                Point velocity = new Point(dx,dy);
+                gem.SetVelocity(velocity);
+                cast.AddActor("gems", gem);
+         }
+         if (random.Next(1,10) == 7)
+         {
+            Actor rock = new Actor();
+                rock.SetText("o");
+                rock.SetFontSize(FONT_SIZE);
+                int rr = random.Next(0, 256);
+                int gr = random.Next(0, 256);
+                int br = random.Next(0, 256);
+                Color color_rock = new Color(rr, gr, br);
+                rock.SetColor(color_rock);
+                int rx = random.Next(1, 5);
+                int ry = 0;
+                int rdx = 0;
+                int rdy = random.Next(1, 5);
+                Point rposition = new Point(rx, ry);
+                rock.SetPosition(new Point(random.Next(0,900),MAX_Y));
+                Point rvelocity = new Point(rdx,rdy);
+                rock.SetVelocity(rvelocity);
+                cast.AddActor("rocks", rock);
+         }
             Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
             Actor player = cast.GetFirstActor("player");
             List<Actor> gems = cast.GetActors("gems");
             List<Actor> rocks = cast.GetActors("rocks");
             banner.SetText($"Score: {score.getScore()}");
+            
+            
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
            
