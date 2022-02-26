@@ -21,6 +21,7 @@ namespace Unit04.Game.Directing
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
         private static int FONT_SIZE = 20;
+        private static int CELL_SIZE = 30;
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -201,6 +202,22 @@ namespace Unit04.Game.Directing
             Point rvelocity = new Point(rdx,rdy);
             rock.SetVelocity(rvelocity);
             cast.AddActor("rocks", rock);
+        }
+        public bool IsCollionsion(Actor One,Actor Two)
+        {
+            int size = CELL_SIZE;
+            int x1 = One.GetPosition().GetX();
+            int y1 = One.GetPosition().GetY();
+
+            int x2 = Two.GetPosition().GetX();
+            int y2 = Two.GetPosition().GetY();
+
+            bool collionsion = false;
+            if (Math.Abs(x1-x2) < size && Math.Abs(y1-y2) < size)
+            {
+                collionsion = true;
+            }
+            return collionsion;
         }
 
     }
