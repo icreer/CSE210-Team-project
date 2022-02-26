@@ -8,7 +8,6 @@
         public void create_gems()
         {
             Random random = new Random();
-            
             Actor gem = new Actor();
                 gem.SetText("*");
                 gem.SetFontSize(FONT_SIZE);

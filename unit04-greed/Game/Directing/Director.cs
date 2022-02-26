@@ -18,9 +18,6 @@ namespace Unit04.Game.Directing
         Score score = new Score();
         Cast cast = new Cast();
         Random random = new Random();
-
-        //Gems gem = new Gems();
-        //Gems rock = new Gems();
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
         private static int FONT_SIZE = 30;
