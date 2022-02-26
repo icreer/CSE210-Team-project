@@ -20,7 +20,7 @@ namespace Unit04.Game.Directing
         Random random = new Random();
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
-        private static int FONT_SIZE = 20;
+        private static int FONT_SIZE = 30;
         private static int CELL_SIZE = 30;
 
         /// <summary>
@@ -119,8 +119,7 @@ namespace Unit04.Game.Directing
                     }
                 }   
 
-                if (player.GetPosition().Equals(gems[x].GetPosition()))
-
+                if (IsCollionsion(player,gems[x]))
                 {
                     score.setscore(true);
                     break;
@@ -134,7 +133,7 @@ namespace Unit04.Game.Directing
             
             for(int x = 0; x < rocks.Count; x++)
             {
-                if (player.GetPosition().Equals(rocks[x].GetPosition()))
+                if (IsCollionsion(player,rocks[x]))
                 {
                     score.setscore(false);
                     x = rocks.Count;
