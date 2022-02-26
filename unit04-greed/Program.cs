@@ -25,9 +25,7 @@ namespace Unit04
         private static string CAPTION = "Greed";
        
         private static Color WHITE = new Color(255, 255, 255);
-       
-
-
+      
 
         /// <summary>
         /// Starts the program using the given arguments.
@@ -51,8 +49,8 @@ namespace Unit04
             banner.SetColor(WHITE);
             banner.SetPosition(new Point(CELL_SIZE, 0));
             cast.AddActor("banner", banner);
-           
-                   
+        
+                
             // start the game
             KeyboardService keyboardService = new KeyboardService(CELL_SIZE);
             VideoService videoService 
