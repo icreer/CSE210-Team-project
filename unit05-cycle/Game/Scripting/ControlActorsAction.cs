@@ -31,21 +31,37 @@ namespace unit05_cycle.Scripting
             {
                 direction = new Point(-Constants.CELL_SIZE, 0);
             }
+            if (keyboardService.IsKeyDown("l"))
+            {
+                direction = new Point(-Constants.CELL_SIZE, 0);
+            }
 
             // right
             if (keyboardService.IsKeyDown("d"))
             {
                 direction = new Point(Constants.CELL_SIZE, 0);
             }
-
+            if (keyboardService.IsKeyDown("j"))
+            {
+                direction = new Point(Constants.CELL_SIZE, 0);
+            
+            }
             // up
             if (keyboardService.IsKeyDown("w"))
+            {
+                direction = new Point(0, -Constants.CELL_SIZE);
+            }
+            if (keyboardService.IsKeyDown("i"))
             {
                 direction = new Point(0, -Constants.CELL_SIZE);
             }
 
             // down
             if (keyboardService.IsKeyDown("s"))
+            {
+                direction = new Point(0, Constants.CELL_SIZE);
+            }
+            if (keyboardService.IsKeyDown("k"))
             {
                 direction = new Point(0, Constants.CELL_SIZE);
             }
