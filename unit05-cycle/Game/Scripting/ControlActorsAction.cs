@@ -31,7 +31,7 @@ namespace unit05_cycle.Scripting
             {
                 direction = new Point(-Constants.CELL_SIZE, 0);
             }
-            if (keyboardService.IsKeyDown("l"))
+            if (keyboardService.IsKeyDown("j"))
             {
                 direction = new Point(-Constants.CELL_SIZE, 0);
             }
@@ -41,7 +41,7 @@ namespace unit05_cycle.Scripting
             {
                 direction = new Point(Constants.CELL_SIZE, 0);
             }
-            if (keyboardService.IsKeyDown("j"))
+            if (keyboardService.IsKeyDown("l"))
             {
                 direction = new Point(Constants.CELL_SIZE, 0);
             
