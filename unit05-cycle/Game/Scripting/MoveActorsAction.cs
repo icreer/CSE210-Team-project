@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Unit05.Game.Casting;
+using unit05_cycle.Casting;
 
 
-namespace Unit05.Game.Scripting
+namespace unit05_cycle.Scripting
 {
     // TODO: Implement the MoveActorsAction class here
 

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Reflection.Metadata;
 using Raylib_cs;
-using Unit05.Game.Casting;
+using unit05_cycle.Casting;
 
 
-namespace Unit05.Game.Services
+namespace unit05_cycle.Services
 {
     /// <summary>
     /// <para>Outputs the game state.</para>
