@@ -24,7 +24,7 @@ namespace unit05_cycle.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
+            Cycle snake = (Cycle)cast.GetFirstActor("cycle");
             List<Actor> segments = snake.GetSegments();
             Actor score = cast.GetFirstActor("score");
             Actor food = cast.GetFirstActor("food");
