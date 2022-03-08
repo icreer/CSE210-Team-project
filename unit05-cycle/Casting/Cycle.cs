@@ -17,7 +17,7 @@ namespace unit05_cycle.Casting
         /// </summary>
         public Cycle()
         {
-            PrepareBody();
+           //PrepareBody();
         }
 
         /// <summary>

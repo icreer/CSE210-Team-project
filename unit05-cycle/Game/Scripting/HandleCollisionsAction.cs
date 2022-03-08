@@ -51,7 +51,7 @@ namespace unit05_cycle.Scripting
                 int points = food.GetPoints();
                 snake.GrowTail(points);
                 score.AddPoints(points);
-                food.Reset();
+                //food.Reset();
             }
         }
 
