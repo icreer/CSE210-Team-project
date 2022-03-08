@@ -17,7 +17,7 @@ namespace unit05_cycle.Casting
         /// </summary>
         public Cycle()
         {
-            PrepareBody();
+           //PrepareBody();
         }
 
         /// <summary>
@@ -98,9 +98,9 @@ namespace unit05_cycle.Casting
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        private void PrepareBody()
+        public void PrepareBody(int x)
         {
-            int x = Constants.MAX_X / 2;
+            //int x = Constants.MAX_X / 2;
             int y = Constants.MAX_Y / 2;
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
