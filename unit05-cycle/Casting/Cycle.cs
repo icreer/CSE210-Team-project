@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using unit05_cycle.Scripting;
 
 namespace unit05_cycle.Casting
 {
@@ -11,13 +12,16 @@ namespace unit05_cycle.Casting
     public class Cycle : Actor
     {
         private List<Actor> segments = new List<Actor>();
+        private Color _color;
+        // private string _player;
 
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Cycle()
+        public Cycle(string player, Color colorConstant)
         {
-           //PrepareBody();
+            _color = colorConstant;
+            PrepareBody(player);
         }
 
         /// <summary>
@@ -60,11 +64,17 @@ namespace unit05_cycle.Casting
                 Point offset = velocity.Reverse();
                 Point position = tail.GetPosition().Add(offset);
 
+                
                 Actor segment = new Actor();
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText("#");
-                segment.SetColor(Constants.GREEN);
+                // HandleCollisionsAction collision = new HandleCollisionsAction();
+                // if (collision.isGameOver)
+                // {
+                //     _color = Constants.WHITE;
+                // }
+                segment.SetColor(_color);
                 segments.Add(segment);
             }
         }
@@ -72,6 +82,8 @@ namespace unit05_cycle.Casting
         /// <inheritdoc/>
         public override void MoveNext()
         {
+            GrowTail(1);
+
             foreach (Actor segment in segments)
             {
                 segment.MoveNext();
@@ -97,22 +109,32 @@ namespace unit05_cycle.Casting
                 throw new ArgumentException("velocity can't be null");
             }
             segments[0].SetVelocity(direction);
+            // Console.WriteLine("Turning Head.");
         }
 
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        private void PrepareBody()
+        public void PrepareBody(string player)
         {
+            
             int x = Constants.MAX_X / 2;
-            int y = Constants.MAX_Y / 2;
+            int y = 1;
+            if (player == "player1")
+            {
+                y = Constants.MAX_Y / 3;
+            }
+            else if (player == "player2")
+            {
+                y = Constants.MAX_Y / 3 * 2;
+            }
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
             {
                 Point position = new Point(x - i * Constants.CELL_SIZE, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
-                string text = i == 0 ? "8" : "#";
-                Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
+                string text = i == 0 ? "@" : "#";
+                Color color = i == 0 ? _color : _color;
 
                 Actor segment = new Actor();
                 segment.SetPosition(position);

@@ -28,6 +28,7 @@ namespace unit05_cycle.Casting
         public void AddPoints(int points)
         {
             this.points += points;
+            SetText($"Player: {this.points}");
         }
     }
 }

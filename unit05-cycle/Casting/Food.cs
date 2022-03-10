@@ -18,7 +18,7 @@ namespace unit05_cycle.Casting
         /// </summary>
         public Food()
         {
-            SetText("");
+            SetText("@");
             SetColor(Constants.RED); 
             Reset();
         }

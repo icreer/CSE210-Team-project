@@ -13,16 +13,16 @@ namespace unit05_cycle
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("food", new Food());
-            cast.AddActor("cycle", new Cycle());
-
+            cast.AddActor("cycle", new Cycle("player1", Constants.RED));
+            cast.AddActor("cycle", new Cycle("player2", Constants.GREEN));
             Score score = new Score();
             score.SetText($"Player One: 0");
-            cast.AddActor("score", score );
+            cast.AddActor("score", score);
 
             Score score2 = new Score();
-            score2.SetPosition(new Point(Constants.MAX_X - 100,0));
+            score2.SetPosition(new Point(Constants.MAX_X-100,0));
             score2.SetText($"Player Two: 0");
-            cast.AddActor("score2", score2);
+            cast.AddActor("score2",score2);
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();

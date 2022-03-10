@@ -24,18 +24,27 @@ namespace unit05_cycle.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            Cycle snake = (Cycle)cast.GetFirstActor("cycle");
-            List<Actor> segments = snake.GetSegments();
-            Actor score = cast.GetFirstActor("score");
-            Actor food = cast.GetFirstActor("food");
-            List<Actor> messages = cast.GetActors("messages");
+            List<Actor> actors = cast.GetActors("cycle");
+
+            foreach (Actor actor in actors)
+            {
+                Cycle snake = (Cycle)actor;
+                List<Actor> segments = snake.GetSegments();
+                Actor score = cast.GetFirstActor("score");
+                Actor score2 = cast.GetFirstActor("score2");
+                // Actor food = cast.GetFirstActor("food");
+                List<Actor> messages = cast.GetActors("messages");
+
             
-            videoService.ClearBuffer();
-            videoService.DrawActors(segments);
-            videoService.DrawActor(score);
-            videoService.DrawActor(food);
-            videoService.DrawActors(messages);
-            videoService.FlushBuffer();
+            
+                videoService.ClearBuffer();
+                videoService.DrawActors(segments);
+                videoService.DrawActor(score);
+                videoService.DrawActor(score2);
+                // videoService.DrawActor(food);
+                videoService.DrawActors(messages);
+                videoService.FlushBuffer();
+            }
         }
     }
 }

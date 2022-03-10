@@ -16,7 +16,7 @@ namespace unit05_cycle.Scripting
     /// </summary>
     public class HandleCollisionsAction : Action
     {
-        private bool isGameOver = false;
+        public bool isGameOver = false;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -30,7 +30,7 @@ namespace unit05_cycle.Scripting
         {
             if (isGameOver == false)
             {
-                HandleFoodCollisions(cast);
+                // HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
@@ -40,20 +40,20 @@ namespace unit05_cycle.Scripting
         /// Updates the score nd moves the food if the snake collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
-        private void HandleFoodCollisions(Cast cast)
-        {
-            Cycle snake = (Cycle)cast.GetFirstActor("cycle");
-            Score score = (Score)cast.GetFirstActor("score");
-            Food food = (Food)cast.GetFirstActor("food");
+        // private void HandleFoodCollisions(Cast cast)
+        // {
+        //     Cycle snake = (Cycle)cast.GetFirstActor("cycle");
+        //     Score score = (Score)cast.GetFirstActor("score");
+        //     Food food = (Food)cast.GetFirstActor("food");
             
-            if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
-            {
-                int points = food.GetPoints();
-                snake.GrowTail(points);
-                score.AddPoints(points);
-                //food.Reset();
-            }
-        }
+        //     if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
+        //     {
+        //         int points = food.GetPoints();
+        //         snake.GrowTail(points);
+        //         score.AddPoints(points);
+        //         food.Reset();
+        //     }
+        // }
 
         /// <summary>
         /// Sets the game over flag if the snake collides with one of its segments.
@@ -61,15 +61,20 @@ namespace unit05_cycle.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Cycle snake = (Cycle)cast.GetFirstActor("cycle");
-            Actor head = snake.GetHead();
-            List<Actor> body = snake.GetBody();
-
-            foreach (Actor segment in body)
+            List<Actor> actors = cast.GetActors("cycle");
+            foreach (Actor actor in actors)
             {
-                if (segment.GetPosition().Equals(head.GetPosition()))
+                Cycle snake = (Cycle)actor;
+                Actor head = snake.GetHead();
+                List<Actor> body = snake.GetBody();
+
+                foreach (Actor segment in body)
                 {
-                    isGameOver = true;
+                    if (segment.GetPosition().Equals(head.GetPosition()))
+                    {
+                        isGameOver = true;
+                        actor.SetColor(Constants.WHITE);
+                    }
                 }
             }
         }
@@ -78,26 +83,30 @@ namespace unit05_cycle.Scripting
         {
             if (isGameOver == true)
             {
-                Cycle snake = (Cycle)cast.GetFirstActor("cycle");
-                List<Actor> segments = snake.GetSegments();
-                Food food = (Food)cast.GetFirstActor("food");
-
-                // create a "game over" message
-                int x = Constants.MAX_X / 2;
-                int y = Constants.MAX_Y / 2;
-                Point position = new Point(x, y);
-
-                Actor message = new Actor();
-                message.SetText("Game Over!");
-                message.SetPosition(position);
-                cast.AddActor("messages", message);
-
-                // make everything white
-                foreach (Actor segment in segments)
+                List<Actor> actors = cast.GetActors("cycle");
+                foreach (Actor actor in actors)
                 {
-                    segment.SetColor(Constants.WHITE);
+                    Cycle snake = (Cycle)actor;
+                    List<Actor> segments = snake.GetSegments();
+                    // Food food = (Food)cast.GetFirstActor("food");
+
+                    // create a "game over" message
+                    int x = Constants.MAX_X / 2;
+                    int y = Constants.MAX_Y / 2;
+                    Point position = new Point(x, y);
+
+                    Actor message = new Actor();
+                    message.SetText("Game Over!");
+                    message.SetPosition(position);
+                    cast.AddActor("messages", message);
+
+                    // make everything white
+                    foreach (Actor segment in segments)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                    // food.SetColor(Constants.WHITE);
                 }
-                food.SetColor(Constants.WHITE);
             }
         }
 
