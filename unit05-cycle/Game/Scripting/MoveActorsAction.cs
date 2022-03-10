@@ -35,8 +35,8 @@ namespace unit05_cycle.Scripting
     //    c) call the MoveNext() method on each actor.
         public void Execute(Cast cast, Script script)
         {
-            List<Actor> action = cast.GetAllActors();
-            foreach(Actor actor in action)
+            List<Actor> actors = cast.GetAllActors();
+            foreach(Actor actor in actors)
             {
                 actor.MoveNext();
             }

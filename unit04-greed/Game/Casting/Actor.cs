@@ -155,7 +155,5 @@ namespace Unit04.Game.Casting
             }
             this.velocity = velocity;
         }
-       
-
     }
 }
