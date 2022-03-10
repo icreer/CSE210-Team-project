@@ -92,13 +92,17 @@ namespace unit05_cycle.Casting
         /// <param name="velocity">The given direction.</param>
         public void TurnHead(Point direction)
         {
+            if (direction == null)
+            {
+                throw new ArgumentException("velocity can't be null");
+            }
             segments[0].SetVelocity(direction);
         }
 
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        public void PrepareBody()
+        private void PrepareBody()
         {
             int x = Constants.MAX_X / 2;
             int y = Constants.MAX_Y / 2;

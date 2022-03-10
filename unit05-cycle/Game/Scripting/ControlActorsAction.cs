@@ -25,7 +25,9 @@ namespace unit05_cycle.Scripting
 
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
+
         {
+           
             // left
             if (keyboardService.IsKeyDown("a"))
             {
@@ -66,8 +68,8 @@ namespace unit05_cycle.Scripting
                 direction = new Point(0, Constants.CELL_SIZE);
             }
 
-            Cycle snake = (Cycle)cast.GetFirstActor("cycle1");
-            snake.TurnHead(direction);
+            Cycle cycle = (Cycle)cast.GetFirstActor("cycle1");
+            cycle.TurnHead(direction);
 
         }
     }
