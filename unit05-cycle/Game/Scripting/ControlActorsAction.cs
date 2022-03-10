@@ -76,12 +76,55 @@ namespace unit05_cycle.Scripting
             {
                 if (i == 1)
                 {
-                    LeftPlayerControl();
+                    //LeftPlayerControl();
+                    if (keyboardService.IsKeyDown("a"))
+                    {
+                     direction = new Point(-Constants.CELL_SIZE, 0);
+                     keyPress = true;
+                    }
+                     else if (keyboardService.IsKeyDown("d"))
+                    {
+                     direction = new Point(Constants.CELL_SIZE, 0);
+                     keyPress = true;
+                    }
+                     else if (keyboardService.IsKeyDown("w"))
+                    {
+                     direction = new Point(0, -Constants.CELL_SIZE);
+                     keyPress = true;
+                     }
+                     else if (keyboardService.IsKeyDown("s"))
+                     {
+                     direction = new Point(0, Constants.CELL_SIZE);
+                     keyPress = true;
+                     }
+                     //keyPress = false;
 
                 }
                 else if (i == 2)
                 {
-                    RightPlayerControl();
+                    //RightPlayerControl();
+                     if (keyboardService.IsKeyDown("j"))
+                     {
+                     direction = new Point(-Constants.CELL_SIZE, 0);
+                     keyPress = true;
+                     }
+                    else if (keyboardService.IsKeyDown("l"))
+                     {
+                     direction = new Point(Constants.CELL_SIZE, 0);
+                     keyPress = true;
+                     }
+                    else if (keyboardService.IsKeyDown("i"))
+                    {
+                     direction = new Point(0, -Constants.CELL_SIZE);
+                    keyPress = true;
+                    }
+                    else if (keyboardService.IsKeyDown("k"))
+                    {
+                    direction = new Point(0, Constants.CELL_SIZE);
+                    keyPress = true;
+                    }
+                   // keyPress = false;
+
                 }
 
                 if (keyPress)
@@ -118,6 +161,7 @@ namespace unit05_cycle.Scripting
                 keyPress = true;
             }
             keyPress = false;
+           // return direction;
         }
 
         private void RightPlayerControl()
