@@ -12,15 +12,14 @@ namespace unit05_cycle.Casting
     public class Cycle : Actor
     {
         private List<Actor> segments = new List<Actor>();
-        private Color _color;
+        // private Color _color;
         // private string _player;
 
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Cycle(string player, Color colorConstant)
+        public Cycle(string player)
         {
-            _color = colorConstant;
             PrepareBody(player);
         }
 
@@ -69,12 +68,7 @@ namespace unit05_cycle.Casting
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText("#");
-                 HandleCollisionsAction collision = new HandleCollisionsAction();
-                 if (collision.isGameOver)
-                 {
-                     _color = Constants.WHITE;
-                 }
-                segment.SetColor(_color);
+                segment.SetColor(GetColor());
                 segments.Add(segment);
             }
         }
@@ -123,10 +117,12 @@ namespace unit05_cycle.Casting
             if (player == "player1")
             {
                 y = Constants.MAX_Y - 400;
+                SetColor(Constants.RED);
             }
             else if (player == "player2")
             {
                 y = Constants.MAX_Y - 205;
+                SetColor(Constants.GREEN);
             }
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
@@ -134,7 +130,7 @@ namespace unit05_cycle.Casting
                 Point position = new Point(x - i * Constants.CELL_SIZE, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = i == 0 ? "@" : "#";
-                Color color = i == 0 ? _color : _color;
+                Color color = i == 0 ? GetColor(): GetColor();
 
                 Actor segment = new Actor();
                 segment.SetPosition(position);

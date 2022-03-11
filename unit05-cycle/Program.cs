@@ -13,8 +13,8 @@ namespace unit05_cycle
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("food", new Food());
-            cast.AddActor("cycle", new Cycle("player1", Constants.RED));
-            cast.AddActor("cycle2", new Cycle("player2", Constants.GREEN));
+            cast.AddActor("cycle", new Cycle("player1"));
+            cast.AddActor("cycle2", new Cycle("player2"));
             Score score = new Score();
             score.SetText($"Player One: 0");
             cast.AddActor("score", score);
