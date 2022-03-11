@@ -122,11 +122,11 @@ namespace unit05_cycle.Casting
             int y = 1;
             if (player == "player1")
             {
-                y = Constants.MAX_Y / 3;
+                y = Constants.MAX_Y - 400;
             }
             else if (player == "player2")
             {
-                y = Constants.MAX_Y / 3 * 2;
+                y = Constants.MAX_Y - 205;
             }
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)

@@ -41,13 +41,13 @@ namespace unit05_cycle.Scripting
                     List<Actor> segment2 = snake2.GetSegments();
                     videoService.ClearBuffer();
                     videoService.DrawActors(segment2);
-                     videoService.DrawActors(segments);
+                    videoService.DrawActors(segments);
                 
                      videoService.DrawActor(score);
                     videoService.DrawActor(score2);
                     // videoService.DrawActor(food);
                     videoService.DrawActors(messages);
-                     videoService.FlushBuffer();
+                    videoService.FlushBuffer();
                 }
                
                 

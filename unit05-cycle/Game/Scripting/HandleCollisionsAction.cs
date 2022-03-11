@@ -18,6 +18,10 @@ namespace unit05_cycle.Scripting
     {
         public bool isGameOver = false;
 
+        private Point head1Position;
+
+        private Point head2Position;
+
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
         /// </summary>
@@ -133,10 +137,12 @@ namespace unit05_cycle.Scripting
             Actor head1 = snake1.GetHead();
             List<Actor> body1 = snake1.GetBody();
 
-            Actor actor2 = cast.GetFirstActor("cycle1");
+            Actor actor2 = cast.GetFirstActor("cycle2");
             Cycle snake2 = (Cycle)actor2;
             Actor head2 = snake2.GetHead();
             List<Actor> body2 = snake2.GetBody();
+            head1Position = head1.GetPosition();
+            head2Position = head2.GetPosition();
 
             foreach (Actor segment in body1)
             {
@@ -221,5 +227,66 @@ namespace unit05_cycle.Scripting
             }
         }
 
+        // private bool PlayerHitThemselves(Cast cast)
+        // {
+        //     Actor actor1 = cast.GetFirstActor("cycle");
+        //     Cycle snake1 = (Cycle)actor1;
+        //     Actor head1 = snake1.GetHead();
+        //     List<Actor> body1 = snake1.GetBody();
+
+        //     Actor actor2 = cast.GetFirstActor("cycle2");
+        //     Cycle snake2 = (Cycle)actor1;
+        //     Actor head2 = snake2.GetHead();
+        //     List<Actor> body2 = snake2.GetBody();
+
+        //     foreach (Actor segment in body1)
+        //     {
+        //         if (segment.GetPosition().Equals(head1.GetPosition()))
+        //         {
+        //             return true;
+        //         }
+        //     }
+
+        //     foreach (Actor segment in body2)
+        //     {
+        //         if (segment.GetPosition().Equals(head2.GetPosition()))
+        //         {
+        //             return true;
+        //         }
+        //     }
+
+        //     return false;
+        // }
+
+        // private bool PlayerHitAnotherPlayer(Cast cast)
+        // {
+        //     Actor actor1 = cast.GetFirstActor("cycle");
+        //     Cycle snake1 = (Cycle)actor1;
+        //     Actor head1 = snake1.GetHead();
+        //     List<Actor> body1 = snake1.GetBody();
+
+        //     Actor actor2 = cast.GetFirstActor("cycle2");
+        //     Cycle snake2 = (Cycle)actor1;
+        //     Actor head2 = snake2.GetHead();
+        //     List<Actor> body2 = snake2.GetBody();
+
+        //     foreach (Actor segment in body1)
+        //     {
+        //         if (segment.GetPosition().Equals(head2.GetPosition()))
+        //         {
+        //             return true;
+        //         }
+        //     }
+
+        //     foreach (Actor segment in body2)
+        //     {
+        //         if (segment.GetPosition().Equals(head1.GetPosition()))
+        //         {
+        //             return true;
+        //         }
+        //     }
+
+        //     return false;
+        // }
     }
 }
