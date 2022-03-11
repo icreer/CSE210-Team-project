@@ -30,7 +30,6 @@ namespace unit05_cycle.Scripting
         {
             if (isGameOver == false)
             {
-                // HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
