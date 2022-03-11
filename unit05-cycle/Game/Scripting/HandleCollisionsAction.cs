@@ -77,6 +77,22 @@ namespace unit05_cycle.Scripting
                     }
                 }
             }
+            List<Actor> actors1 = cast.GetActors("cycle2");
+            foreach (Actor actor in actors1)
+            {
+                Cycle snake = (Cycle)actor;
+                Actor head = snake.GetHead();
+                List<Actor> body = snake.GetBody();
+
+                foreach (Actor segment in body)
+                {
+                    if (segment.GetPosition().Equals(head.GetPosition()))
+                    {
+                        isGameOver = true;
+                        actor.SetColor(Constants.WHITE);
+                    }
+                }
+            }
         }
 
         private void HandleGameOver(Cast cast)
@@ -85,6 +101,30 @@ namespace unit05_cycle.Scripting
             {
                 List<Actor> actors = cast.GetActors("cycle");
                 foreach (Actor actor in actors)
+                {
+                    Cycle snake = (Cycle)actor;
+                    List<Actor> segments = snake.GetSegments();
+                    // Food food = (Food)cast.GetFirstActor("food");
+
+                    // create a "game over" message
+                    int x = Constants.MAX_X / 2;
+                    int y = Constants.MAX_Y / 2;
+                    Point position = new Point(x, y);
+
+                    Actor message = new Actor();
+                    message.SetText("Game Over!");
+                    message.SetPosition(position);
+                    cast.AddActor("messages", message);
+
+                    // make everything white
+                    foreach (Actor segment in segments)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                    // food.SetColor(Constants.WHITE);
+                }
+                List<Actor> actors1 = cast.GetActors("cycle2");
+                foreach (Actor actor in actors1)
                 {
                     Cycle snake = (Cycle)actor;
                     List<Actor> segments = snake.GetSegments();
