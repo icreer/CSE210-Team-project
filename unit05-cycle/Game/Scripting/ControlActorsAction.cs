@@ -97,10 +97,10 @@ namespace unit05_cycle.Scripting
                      direction = new Point(0, Constants.CELL_SIZE);
                      keyPress = true;
                      }
-                     //keyPress = false;
+                   
 
                 }
-                else if (i == 2)
+                else if (i == 2 )
                 {
                     //RightPlayerControl();
                      if (keyboardService.IsKeyDown("j"))
@@ -123,7 +123,7 @@ namespace unit05_cycle.Scripting
                     direction = new Point(0, Constants.CELL_SIZE);
                     keyPress = true;
                     }
-                   // keyPress = false;
+                  
 
                 }
 
