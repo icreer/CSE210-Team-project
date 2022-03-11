@@ -16,7 +16,6 @@ namespace unit05_cycle.Scripting
         private KeyboardService keyboardService;
         private Point direction = new Point(Constants.CELL_SIZE, 0);
         private Point direction2 = new Point(Constants.CELL_SIZE, 0);
-        private bool keyPress = false;
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
@@ -99,55 +98,5 @@ namespace unit05_cycle.Scripting
            
         }
 
-        private void LeftPlayerControl()
-        {
-            if (keyboardService.IsKeyDown("a"))
-            {
-                direction = new Point(-Constants.CELL_SIZE, 0);
-                keyPress = true;
-            }
-            else if (keyboardService.IsKeyDown("d"))
-            {
-                direction = new Point(Constants.CELL_SIZE, 0);
-                keyPress = true;
-            }
-            else if (keyboardService.IsKeyDown("w"))
-            {
-                direction = new Point(0, -Constants.CELL_SIZE);
-                keyPress = true;
-            }
-            else if (keyboardService.IsKeyDown("s"))
-            {
-                direction = new Point(0, Constants.CELL_SIZE);
-                keyPress = true;
-            }
-            keyPress = false;
-           // return direction;
-        }
-
-        private void RightPlayerControl()
-        {
-            if (keyboardService.IsKeyDown("j"))
-            {
-                direction = new Point(-Constants.CELL_SIZE, 0);
-                keyPress = true;
-            }
-            else if (keyboardService.IsKeyDown("l"))
-            {
-                direction = new Point(Constants.CELL_SIZE, 0);
-                keyPress = true;
-            }
-            else if (keyboardService.IsKeyDown("i"))
-            {
-                direction = new Point(0, -Constants.CELL_SIZE);
-                keyPress = true;
-            }
-            else if (keyboardService.IsKeyDown("k"))
-            {
-                direction = new Point(0, Constants.CELL_SIZE);
-                keyPress = true;
-            }
-            keyPress = false;
-        }
     }
 }
