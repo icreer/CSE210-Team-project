@@ -118,95 +118,26 @@ namespace unit05_cycle.Scripting
                 {
                     Cycle snake = (Cycle)actor;
                     List<Actor> segments = snake.GetSegments();
-                    // Food food = (Food)cast.GetFirstActor("food");
-
 
                     // make everything white
                     foreach (Actor segment in segments)
                     {
                         segment.SetColor(Constants.WHITE);
                     }
-                    // food.SetColor(Constants.WHITE);
                 }
                 List<Actor> actors1 = cast.GetActors("cycle2");
                 foreach (Actor actor in actors1)
                 {
                     Cycle snake = (Cycle)actor;
                     List<Actor> segments = snake.GetSegments();
-                    // Food food = (Food)cast.GetFirstActor("food");
-
-                   
 
                     // make everything white
                     foreach (Actor segment in segments)
                     {
                         segment.SetColor(Constants.WHITE);
                     }
-                    // food.SetColor(Constants.WHITE);
                 }
             }
         }
-
-        // private bool PlayerHitThemselves(Cast cast)
-        // {
-        //     Actor actor1 = cast.GetFirstActor("cycle");
-        //     Cycle snake1 = (Cycle)actor1;
-        //     Actor head1 = snake1.GetHead();
-        //     List<Actor> body1 = snake1.GetBody();
-
-        //     Actor actor2 = cast.GetFirstActor("cycle2");
-        //     Cycle snake2 = (Cycle)actor1;
-        //     Actor head2 = snake2.GetHead();
-        //     List<Actor> body2 = snake2.GetBody();
-
-        //     foreach (Actor segment in body1)
-        //     {
-        //         if (segment.GetPosition().Equals(head1.GetPosition()))
-        //         {
-        //             return true;
-        //         }
-        //     }
-
-        //     foreach (Actor segment in body2)
-        //     {
-        //         if (segment.GetPosition().Equals(head2.GetPosition()))
-        //         {
-        //             return true;
-        //         }
-        //     }
-
-        //     return false;
-        // }
-
-        // private bool PlayerHitAnotherPlayer(Cast cast)
-        // {
-        //     Actor actor1 = cast.GetFirstActor("cycle");
-        //     Cycle snake1 = (Cycle)actor1;
-        //     Actor head1 = snake1.GetHead();
-        //     List<Actor> body1 = snake1.GetBody();
-
-        //     Actor actor2 = cast.GetFirstActor("cycle2");
-        //     Cycle snake2 = (Cycle)actor1;
-        //     Actor head2 = snake2.GetHead();
-        //     List<Actor> body2 = snake2.GetBody();
-
-        //     foreach (Actor segment in body1)
-        //     {
-        //         if (segment.GetPosition().Equals(head2.GetPosition()))
-        //         {
-        //             return true;
-        //         }
-        //     }
-
-        //     foreach (Actor segment in body2)
-        //     {
-        //         if (segment.GetPosition().Equals(head1.GetPosition()))
-        //         {
-        //             return true;
-        //         }
-        //     }
-
-        //     return false;
-        // }
     }
 }

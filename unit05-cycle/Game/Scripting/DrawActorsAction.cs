@@ -32,7 +32,6 @@ namespace unit05_cycle.Scripting
                 List<Actor> segments = snake.GetSegments();
                 Actor score = cast.GetFirstActor("score");
                 Actor score2 = cast.GetFirstActor("score2");
-                // Actor food = cast.GetFirstActor("food");
                 List<Actor> messages = cast.GetActors("messages");
 
                 foreach (Actor actor1 in actor2)
@@ -43,15 +42,11 @@ namespace unit05_cycle.Scripting
                     videoService.DrawActors(segment2);
                     videoService.DrawActors(segments);
                 
-                     videoService.DrawActor(score);
+                    videoService.DrawActor(score);
                     videoService.DrawActor(score2);
-                    // videoService.DrawActor(food);
                     videoService.DrawActors(messages);
                     videoService.FlushBuffer();
                 }
-               
-                
-                
             }
         }
     }

@@ -12,8 +12,6 @@ namespace unit05_cycle.Casting
     public class Cycle : Actor
     {
         private List<Actor> segments = new List<Actor>();
-        // private Color _color;
-        // private string _player;
 
         /// <summary>
         /// Constructs a new instance of a Snake.
