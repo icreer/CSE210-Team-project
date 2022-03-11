@@ -69,11 +69,11 @@ namespace unit05_cycle.Casting
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText("#");
-                // HandleCollisionsAction collision = new HandleCollisionsAction();
-                // if (collision.isGameOver)
-                // {
-                //     _color = Constants.WHITE;
-                // }
+                 HandleCollisionsAction collision = new HandleCollisionsAction();
+                 if (collision.isGameOver)
+                 {
+                     _color = Constants.WHITE;
+                 }
                 segment.SetColor(_color);
                 segments.Add(segment);
             }

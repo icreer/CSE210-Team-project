@@ -74,7 +74,7 @@ namespace unit05_cycle.Scripting
 
             foreach (Actor actor in actors)
             {
-                if (i == 1)
+                if (actor.GetColor().Equals(Constants.RED))
                 {
                     //LeftPlayerControl();
                     if (keyboardService.IsKeyDown("a"))
@@ -100,7 +100,7 @@ namespace unit05_cycle.Scripting
                    
 
                 }
-                else if (i == 2 )
+                else if (actor.GetColor().Equals(Constants.GREEN) )
                 {
                     //RightPlayerControl();
                      if (keyboardService.IsKeyDown("j"))

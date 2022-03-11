@@ -25,7 +25,7 @@ namespace unit05_cycle.Scripting
         public void Execute(Cast cast, Script script)
         {
             List<Actor> actors = cast.GetActors("cycle");
-
+            List<Actor> actor2 = cast.GetActors("cycle2");
             foreach (Actor actor in actors)
             {
                 Cycle snake = (Cycle)actor;
@@ -35,15 +35,23 @@ namespace unit05_cycle.Scripting
                 // Actor food = cast.GetFirstActor("food");
                 List<Actor> messages = cast.GetActors("messages");
 
-            
-            
-                videoService.ClearBuffer();
-                videoService.DrawActors(segments);
-                videoService.DrawActor(score);
-                videoService.DrawActor(score2);
-                // videoService.DrawActor(food);
-                videoService.DrawActors(messages);
-                videoService.FlushBuffer();
+                foreach (Actor actor1 in actor2)
+                {
+                    Cycle snake2 = (Cycle)actor1;
+                    List<Actor> segment2 = snake2.GetSegments();
+                    videoService.ClearBuffer();
+                    videoService.DrawActors(segment2);
+                     videoService.DrawActors(segments);
+                
+                     videoService.DrawActor(score);
+                    videoService.DrawActor(score2);
+                    // videoService.DrawActor(food);
+                    videoService.DrawActors(messages);
+                     videoService.FlushBuffer();
+                }
+               
+                
+                
             }
         }
     }
