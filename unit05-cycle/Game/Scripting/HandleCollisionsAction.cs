@@ -93,6 +93,30 @@ namespace unit05_cycle.Scripting
                     }
                 }
             }
+            foreach (Actor actor in actors)
+            {
+                Cycle snake = (Cycle)actor;
+                Actor head = snake.GetHead();
+                List<Actor> body = snake.GetBody();
+                foreach (Actor segment in body)
+                {
+                    foreach (Actor actor1 in actors1)
+                    {
+                        Cycle snake1 = (Cycle)actor1;
+                        Actor head1 = snake.GetHead();
+                        List<Actor> body1 = snake.GetBody();
+                        foreach (Actor segment1 in body1)
+                        {
+                            if (segment.GetPosition().Equals(head1.GetPosition()) || segment1.GetPosition().Equals(head.GetPosition()))
+                            {
+                                isGameOver = true;
+                                actor.SetColor(Constants.WHITE);
+                                actor1.SetColor(Constants.WHITE);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void HandleGameOver(Cast cast)
